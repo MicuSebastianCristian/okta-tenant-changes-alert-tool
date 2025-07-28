@@ -1,0 +1,3886 @@
+{
+  "snapshotId": "6e7dc589-d43b-4a1c-b72c-aecbd7d812d8",
+  "orgId": "demo-demo-intragen",
+  "takenAt": "2025-07-14T09:54:41.003748+00:00",
+  "version": 1,
+  "policies": [
+    {
+      "id": "00pt4i6arlWbfYrTe697",
+      "status": "ACTIVE",
+      "name": "Default Policy",
+      "description": "The default policy applies in all situations if no other policy applies.",
+      "priority": 1,
+      "system": true,
+      "conditions": {
+        "people": {
+          "groups": {
+            "include": [
+              "00gt4i6arj7QokTDx697"
+            ]
+          }
+        }
+      },
+      "created": "2025-07-11T07:39:55.000Z",
+      "lastUpdated": "2025-07-11T07:39:55.000Z",
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/00pt4i6arlWbfYrTe697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT"
+            ]
+          }
+        },
+        "rules": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/00pt4i6arlWbfYrTe697/rules",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "OKTA_SIGN_ON"
+    },
+    {
+      "id": "00pt4hzu1ilirQh9W697",
+      "status": "ACTIVE",
+      "name": "Passwordless Users",
+      "priority": 1,
+      "system": false,
+      "conditions": {
+        "people": {
+          "groups": {
+            "include": [
+              "00gt4id8mfDTy6nIN697"
+            ]
+          }
+        }
+      },
+      "created": "2025-07-11T07:41:25.000Z",
+      "lastUpdated": "2025-07-11T07:41:25.000Z",
+      "settings": {
+        "type": "AUTHENTICATORS",
+        "authenticators": [
+          {
+            "key": "okta_email",
+            "enroll": {
+              "self": "REQUIRED"
+            }
+          },
+          {
+            "key": "okta_verify",
+            "enroll": {
+              "self": "REQUIRED"
+            }
+          },
+          {
+            "key": "okta_password",
+            "enroll": {
+              "self": "NOT_ALLOWED"
+            }
+          }
+        ]
+      },
+      "_links": {
+        "mappings": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/00pt4hzu1ilirQh9W697/mappings",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        },
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/00pt4hzu1ilirQh9W697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "rules": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/00pt4hzu1ilirQh9W697/rules",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/00pt4hzu1ilirQh9W697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "MFA_ENROLL"
+    },
+    {
+      "id": "00pt4i6atzfSt7tPj697",
+      "status": "ACTIVE",
+      "name": "Default Policy",
+      "description": "The default policy applies in all situations if no other policy applies.",
+      "priority": 2,
+      "system": true,
+      "conditions": {
+        "people": {
+          "groups": {
+            "include": [
+              "00gt4i6arj7QokTDx697"
+            ]
+          }
+        }
+      },
+      "created": "2025-07-11T07:39:57.000Z",
+      "lastUpdated": "2025-07-11T07:41:25.000Z",
+      "settings": {
+        "factors": {
+          "okta_otp": {
+            "enroll": {
+              "self": "OPTIONAL"
+            },
+            "consent": {
+              "type": "NONE"
+            }
+          },
+          "okta_sms": {
+            "enroll": {
+              "self": "OPTIONAL"
+            },
+            "consent": {
+              "type": "NONE"
+            }
+          },
+          "okta_push": {
+            "enroll": {
+              "self": "OPTIONAL"
+            },
+            "consent": {
+              "type": "NONE"
+            }
+          },
+          "okta_email": {
+            "enroll": {
+              "self": "OPTIONAL"
+            },
+            "consent": {
+              "type": "NONE"
+            }
+          },
+          "okta_password": {
+            "enroll": {
+              "self": "REQUIRED"
+            },
+            "consent": {
+              "type": "NONE"
+            }
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/00pt4i6atzfSt7tPj697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT"
+            ]
+          }
+        },
+        "rules": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/00pt4i6atzfSt7tPj697/rules",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "MFA_ENROLL"
+    },
+    {
+      "id": "rstt4i3bpkooTptse697",
+      "status": "ACTIVE",
+      "name": "2. Medium Impact Applications",
+      "priority": 1,
+      "system": false,
+      "conditions": null,
+      "created": "2025-07-11T07:41:19.000Z",
+      "lastUpdated": "2025-07-11T07:41:19.000Z",
+      "_links": {
+        "mappings": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i3bpkooTptse697/mappings",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        },
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i3bpkooTptse697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "rules": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i3bpkooTptse697/rules",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i3bpkooTptse697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY"
+    },
+    {
+      "id": "rstt4i6awpiYVjWwa697",
+      "status": "ACTIVE",
+      "name": "Okta Admin Console",
+      "priority": 1,
+      "system": false,
+      "conditions": null,
+      "created": "2025-07-11T07:40:01.000Z",
+      "lastUpdated": "2025-07-11T07:40:01.000Z",
+      "_links": {
+        "mappings": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6awpiYVjWwa697/mappings",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        },
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6awpiYVjWwa697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "rules": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6awpiYVjWwa697/rules",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6awpiYVjWwa697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY"
+    },
+    {
+      "id": "rstt4i6aww6yZzPsh697",
+      "status": "ACTIVE",
+      "name": "Okta Dashboard",
+      "priority": 1,
+      "system": false,
+      "conditions": null,
+      "created": "2025-07-11T07:40:01.000Z",
+      "lastUpdated": "2025-07-11T07:40:01.000Z",
+      "_links": {
+        "mappings": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6aww6yZzPsh697/mappings",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        },
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6aww6yZzPsh697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "rules": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6aww6yZzPsh697/rules",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6aww6yZzPsh697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY"
+    },
+    {
+      "id": "rstt4i6awzutaerCN697",
+      "status": "ACTIVE",
+      "name": "Okta Browser Plugin",
+      "priority": 1,
+      "system": false,
+      "conditions": null,
+      "created": "2025-07-11T07:40:01.000Z",
+      "lastUpdated": "2025-07-11T07:40:01.000Z",
+      "_links": {
+        "mappings": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6awzutaerCN697/mappings",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        },
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6awzutaerCN697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "rules": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6awzutaerCN697/rules",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6awzutaerCN697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY"
+    },
+    {
+      "id": "rstt4i6ay6Cxp4w3c697",
+      "status": "ACTIVE",
+      "name": "Any two factors",
+      "description": "Require two factors to access.",
+      "priority": 1,
+      "system": true,
+      "conditions": null,
+      "created": "2025-07-11T07:40:01.000Z",
+      "lastUpdated": "2025-07-11T07:40:01.000Z",
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay6Cxp4w3c697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT"
+            ]
+          }
+        },
+        "rules": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay6Cxp4w3c697/rules",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY"
+    },
+    {
+      "id": "rstt4i6ayxaqJwZu7697",
+      "status": "ACTIVE",
+      "name": "Seamless access based on risk context",
+      "description": "Allow seamless log in with Okta FastPass for low risk authentication scenarios with enhanced security for medium and high risk.",
+      "priority": 1,
+      "system": false,
+      "conditions": null,
+      "created": "2025-07-11T07:40:02.000Z",
+      "lastUpdated": "2025-07-11T07:40:02.000Z",
+      "_links": {
+        "mappings": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ayxaqJwZu7697/mappings",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        },
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ayxaqJwZu7697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "rules": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ayxaqJwZu7697/rules",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ayxaqJwZu7697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY"
+    },
+    {
+      "id": "rstt4i9tjdUwJyPXD697",
+      "status": "ACTIVE",
+      "name": "1. Low Impact Applications",
+      "priority": 1,
+      "system": false,
+      "conditions": null,
+      "created": "2025-07-11T07:41:17.000Z",
+      "lastUpdated": "2025-07-11T07:41:17.000Z",
+      "_links": {
+        "mappings": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i9tjdUwJyPXD697/mappings",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        },
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i9tjdUwJyPXD697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "rules": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i9tjdUwJyPXD697/rules",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i9tjdUwJyPXD697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY"
+    },
+    {
+      "id": "rstt4id6fcg2TF1Xk697",
+      "status": "ACTIVE",
+      "name": "3. High Impact Applications",
+      "priority": 1,
+      "system": false,
+      "conditions": null,
+      "created": "2025-07-11T07:41:22.000Z",
+      "lastUpdated": "2025-07-11T07:41:22.000Z",
+      "_links": {
+        "mappings": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4id6fcg2TF1Xk697/mappings",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        },
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4id6fcg2TF1Xk697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "rules": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4id6fcg2TF1Xk697/rules",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4id6fcg2TF1Xk697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY"
+    },
+    {
+      "id": "00pt4i6avsxNDXjcz697",
+      "status": "ACTIVE",
+      "name": "Default Policy",
+      "description": "The default policy applies in all situations if no other policy applies.",
+      "priority": 1,
+      "system": true,
+      "conditions": {
+        "people": {
+          "groups": {
+            "include": [
+              "00gt4i6arj7QokTDx697"
+            ]
+          }
+        },
+        "authProvider": {
+          "provider": "OKTA"
+        }
+      },
+      "created": "2025-07-11T07:39:59.000Z",
+      "lastUpdated": "2025-07-11T07:40:01.000Z",
+      "settings": {
+        "password": {
+          "complexity": {
+            "minLength": 8,
+            "minLowerCase": 1,
+            "minUpperCase": 1,
+            "minNumber": 1,
+            "minSymbol": 0,
+            "excludeUsername": true,
+            "dictionary": {
+              "common": {
+                "exclude": false
+              }
+            },
+            "excludeAttributes": []
+          },
+          "age": {
+            "maxAgeDays": 0,
+            "expireWarnDays": 0,
+            "minAgeMinutes": 0,
+            "historyCount": 4
+          },
+          "lockout": {
+            "maxAttempts": 10,
+            "autoUnlockMinutes": 0,
+            "userLockoutNotificationChannels": [],
+            "showLockoutFailures": false
+          }
+        },
+        "recovery": {
+          "factors": {
+            "recovery_question": {
+              "status": "INACTIVE",
+              "properties": {
+                "complexity": {
+                  "minLength": 4
+                }
+              }
+            },
+            "okta_email": {
+              "status": "INACTIVE",
+              "properties": {
+                "recoveryToken": {
+                  "tokenLifetimeMinutes": 60
+                }
+              }
+            },
+            "okta_sms": {
+              "status": "INACTIVE"
+            },
+            "okta_call": {
+              "status": "INACTIVE"
+            }
+          }
+        },
+        "delegation": {
+          "options": {
+            "skipUnlock": false
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/00pt4i6avsxNDXjcz697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT"
+            ]
+          }
+        },
+        "rules": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/00pt4i6avsxNDXjcz697/rules",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "PASSWORD"
+    },
+    {
+      "id": "00pt4i6att29RFimG697",
+      "status": "ACTIVE",
+      "name": "Idp Discovery Policy",
+      "description": "The default IdP Discovery Policy",
+      "priority": 1,
+      "system": true,
+      "conditions": null,
+      "created": "2025-07-11T07:39:57.000Z",
+      "lastUpdated": "2025-07-11T07:39:57.000Z",
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/00pt4i6att29RFimG697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT"
+            ]
+          }
+        },
+        "rules": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/00pt4i6att29RFimG697/rules",
+          "hints": {
+            "allow": [
+              "GET",
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "IDP_DISCOVERY"
+    }
+  ],
+  "policyRules": [
+    {
+      "id": "0prt4i6armOILq0Ss697",
+      "status": "ACTIVE",
+      "name": "Default Rule",
+      "priority": 1,
+      "created": "2025-07-11T07:39:55.000Z",
+      "lastUpdated": "2025-07-11T12:43:54.000Z",
+      "system": true,
+      "conditions": {
+        "people": {
+          "users": {
+            "exclude": []
+          }
+        },
+        "network": {
+          "connection": "ANYWHERE"
+        },
+        "authContext": {
+          "authType": "ANY"
+        }
+      },
+      "actions": {
+        "signon": {
+          "access": "ALLOW",
+          "requireFactor": true,
+          "primaryFactor": "PASSWORD_IDP_ANY_FACTOR",
+          "factorPromptMode": "ALWAYS",
+          "rememberDeviceByDefault": false,
+          "session": {
+            "usePersistentCookie": false,
+            "maxSessionIdleMinutes": 120,
+            "maxSessionLifetimeMinutes": 43200
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/00pt4i6arlWbfYrTe697/rules/0prt4i6armOILq0Ss697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT"
+            ]
+          }
+        }
+      },
+      "type": "SIGN_ON",
+      "policyId": "00pt4i6arlWbfYrTe697"
+    },
+    {
+      "id": "0prt4i0r0erM5k8oZ697",
+      "status": "ACTIVE",
+      "name": "Passwordless Enrollment",
+      "priority": 1,
+      "created": "2025-07-11T07:41:26.000Z",
+      "lastUpdated": "2025-07-11T07:41:26.000Z",
+      "system": false,
+      "conditions": {
+        "people": {
+          "users": {
+            "exclude": []
+          }
+        },
+        "network": {
+          "connection": "ZONE",
+          "exclude": [
+            "nzot4hxdg7PVfvmZI697"
+          ]
+        },
+        "app": {
+          "include": [],
+          "exclude": []
+        }
+      },
+      "actions": {
+        "enroll": {
+          "self": "CHALLENGE"
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/00pt4hzu1ilirQh9W697/rules/0prt4i0r0erM5k8oZ697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/00pt4hzu1ilirQh9W697/rules/0prt4i0r0erM5k8oZ697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "MFA_ENROLL",
+      "policyId": "00pt4hzu1ilirQh9W697"
+    },
+    {
+      "id": "0prt4i6au0sDp6X9j697",
+      "status": "ACTIVE",
+      "name": "Default Rule",
+      "priority": 1,
+      "created": "2025-07-11T07:39:57.000Z",
+      "lastUpdated": "2025-07-11T07:39:57.000Z",
+      "system": true,
+      "conditions": {
+        "people": {
+          "users": {
+            "exclude": []
+          }
+        },
+        "network": {
+          "connection": "ANYWHERE"
+        }
+      },
+      "actions": {
+        "enroll": {
+          "self": "CHALLENGE"
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/00pt4i6atzfSt7tPj697/rules/0prt4i6au0sDp6X9j697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT"
+            ]
+          }
+        }
+      },
+      "type": "MFA_ENROLL",
+      "policyId": "00pt4i6atzfSt7tPj697"
+    },
+    {
+      "id": "rult4id9jlzIZABVQ697",
+      "status": "ACTIVE",
+      "name": "Registered + Low Risk = 1FA (silent OV + DB)",
+      "priority": 3,
+      "created": "2025-07-11T07:41:20.000Z",
+      "lastUpdated": "2025-07-11T07:41:20.000Z",
+      "system": false,
+      "conditions": {
+        "people": {
+          "users": {
+            "exclude": []
+          }
+        },
+        "network": {
+          "connection": "ANYWHERE"
+        },
+        "device": {
+          "registered": true,
+          "managed": false
+        },
+        "riskScore": {
+          "level": "LOW"
+        },
+        "userType": {
+          "include": [],
+          "exclude": []
+        }
+      },
+      "actions": {
+        "appSignOn": {
+          "access": "ALLOW",
+          "verificationMethod": {
+            "factorMode": "1FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT2H",
+            "constraints": [
+              {
+                "possession": {
+                  "required": true,
+                  "deviceBound": "REQUIRED",
+                  "userPresence": "OPTIONAL"
+                }
+              },
+              {
+                "knowledge": {
+                  "required": true
+                }
+              }
+            ]
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i3bpkooTptse697/rules/rult4id9jlzIZABVQ697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i3bpkooTptse697/rules/rult4id9jlzIZABVQ697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4i3bpkooTptse697"
+    },
+    {
+      "id": "rult4i7vy4ROGqHa0697",
+      "status": "ACTIVE",
+      "name": "Managed + Medium Risk = 2FA",
+      "priority": 4,
+      "created": "2025-07-11T07:41:20.000Z",
+      "lastUpdated": "2025-07-11T07:41:20.000Z",
+      "system": false,
+      "conditions": {
+        "people": {
+          "users": {
+            "exclude": []
+          }
+        },
+        "network": {
+          "connection": "ANYWHERE"
+        },
+        "device": {
+          "registered": true,
+          "managed": true
+        },
+        "riskScore": {
+          "level": "MEDIUM"
+        },
+        "userType": {
+          "include": [],
+          "exclude": []
+        }
+      },
+      "actions": {
+        "appSignOn": {
+          "access": "ALLOW",
+          "verificationMethod": {
+            "factorMode": "2FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT2H",
+            "constraints": []
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i3bpkooTptse697/rules/rult4i7vy4ROGqHa0697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i3bpkooTptse697/rules/rult4i7vy4ROGqHa0697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4i3bpkooTptse697"
+    },
+    {
+      "id": "rult4ichtln9z5BN8697",
+      "status": "ACTIVE",
+      "name": "Registered + Medium Risk = 2FA (DB)",
+      "priority": 6,
+      "created": "2025-07-11T07:41:21.000Z",
+      "lastUpdated": "2025-07-11T07:41:21.000Z",
+      "system": false,
+      "conditions": {
+        "people": {
+          "users": {
+            "exclude": []
+          }
+        },
+        "network": {
+          "connection": "ANYWHERE"
+        },
+        "device": {
+          "registered": true,
+          "managed": false
+        },
+        "riskScore": {
+          "level": "MEDIUM"
+        },
+        "userType": {
+          "include": [],
+          "exclude": []
+        }
+      },
+      "actions": {
+        "appSignOn": {
+          "access": "ALLOW",
+          "verificationMethod": {
+            "factorMode": "2FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT2H",
+            "constraints": [
+              {
+                "possession": {
+                  "required": true,
+                  "deviceBound": "REQUIRED"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i3bpkooTptse697/rules/rult4ichtln9z5BN8697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i3bpkooTptse697/rules/rult4ichtln9z5BN8697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4i3bpkooTptse697"
+    },
+    {
+      "id": "rult4i5h5zhXmzdyP697",
+      "status": "ACTIVE",
+      "name": "Managed + High Risk = 2FA (DB + PR)",
+      "priority": 7,
+      "created": "2025-07-11T07:41:21.000Z",
+      "lastUpdated": "2025-07-11T07:41:21.000Z",
+      "system": false,
+      "conditions": {
+        "people": {
+          "users": {
+            "exclude": []
+          }
+        },
+        "network": {
+          "connection": "ANYWHERE"
+        },
+        "device": {
+          "registered": true,
+          "managed": true
+        },
+        "riskScore": {
+          "level": "HIGH"
+        },
+        "userType": {
+          "include": [],
+          "exclude": []
+        }
+      },
+      "actions": {
+        "appSignOn": {
+          "access": "ALLOW",
+          "verificationMethod": {
+            "factorMode": "2FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT2H",
+            "constraints": [
+              {
+                "possession": {
+                  "required": true,
+                  "deviceBound": "REQUIRED",
+                  "phishingResistant": "REQUIRED"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i3bpkooTptse697/rules/rult4i5h5zhXmzdyP697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i3bpkooTptse697/rules/rult4i5h5zhXmzdyP697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4i3bpkooTptse697"
+    },
+    {
+      "id": "rult4ia8momsGJ8At697",
+      "status": "ACTIVE",
+      "name": "Registered + High Risk = 2FA (DB + PR)",
+      "priority": 8,
+      "created": "2025-07-11T07:41:21.000Z",
+      "lastUpdated": "2025-07-11T07:41:21.000Z",
+      "system": false,
+      "conditions": {
+        "people": {
+          "users": {
+            "exclude": []
+          }
+        },
+        "network": {
+          "connection": "ANYWHERE"
+        },
+        "device": {
+          "registered": true,
+          "managed": false
+        },
+        "riskScore": {
+          "level": "HIGH"
+        },
+        "userType": {
+          "include": [],
+          "exclude": []
+        }
+      },
+      "actions": {
+        "appSignOn": {
+          "access": "ALLOW",
+          "verificationMethod": {
+            "factorMode": "2FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT0S",
+            "constraints": [
+              {
+                "possession": {
+                  "required": true,
+                  "deviceBound": "REQUIRED",
+                  "phishingResistant": "REQUIRED"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i3bpkooTptse697/rules/rult4ia8momsGJ8At697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i3bpkooTptse697/rules/rult4ia8momsGJ8At697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4i3bpkooTptse697"
+    },
+    {
+      "id": "rult4hy7k1O92mtYz697",
+      "status": "ACTIVE",
+      "name": "BYOD = 2FA (HP)",
+      "priority": 9,
+      "created": "2025-07-11T07:41:22.000Z",
+      "lastUpdated": "2025-07-11T07:41:22.000Z",
+      "system": false,
+      "conditions": {
+        "people": {
+          "users": {
+            "exclude": []
+          }
+        },
+        "network": {
+          "connection": "ANYWHERE"
+        },
+        "riskScore": {
+          "level": "ANY"
+        },
+        "userType": {
+          "include": [],
+          "exclude": []
+        }
+      },
+      "actions": {
+        "appSignOn": {
+          "access": "ALLOW",
+          "verificationMethod": {
+            "factorMode": "2FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT2H",
+            "constraints": [
+              {
+                "possession": {
+                  "required": true,
+                  "hardwareProtection": "REQUIRED",
+                  "deviceBound": "REQUIRED"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i3bpkooTptse697/rules/rult4hy7k1O92mtYz697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i3bpkooTptse697/rules/rult4hy7k1O92mtYz697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4i3bpkooTptse697"
+    },
+    {
+      "id": "rult4i3bpliPpJyuM697",
+      "status": "ACTIVE",
+      "name": "Catch-all Rule",
+      "priority": 99,
+      "created": "2025-07-11T07:41:19.000Z",
+      "lastUpdated": "2025-07-11T07:41:20.000Z",
+      "system": true,
+      "conditions": null,
+      "actions": {
+        "appSignOn": {
+          "access": "DENY",
+          "verificationMethod": {
+            "factorMode": "2FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT43800H",
+            "constraints": []
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i3bpkooTptse697/rules/rult4i3bpliPpJyuM697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4i3bpkooTptse697"
+    },
+    {
+      "id": "rult4i6awsgSWUXHV697",
+      "status": "ACTIVE",
+      "name": "Admin App Policy",
+      "priority": 0,
+      "created": "2025-07-11T07:40:01.000Z",
+      "lastUpdated": "2025-07-11T12:48:22.000Z",
+      "system": false,
+      "conditions": {
+        "people": {
+          "users": {
+            "exclude": []
+          }
+        },
+        "network": {
+          "connection": "ANYWHERE"
+        },
+        "riskScore": {
+          "level": "ANY"
+        },
+        "userType": {
+          "include": [],
+          "exclude": []
+        }
+      },
+      "actions": {
+        "appSignOn": {
+          "access": "ALLOW",
+          "verificationMethod": {
+            "factorMode": "2FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT20H",
+            "constraints": [
+              {
+                "knowledge": {
+                  "required": true,
+                  "types": [
+                    "password"
+                  ],
+                  "reauthenticateIn": "PT43800H"
+                },
+                "possession": {
+                  "required": true,
+                  "userVerification": "REQUIRED"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6awpiYVjWwa697/rules/rult4i6awsgSWUXHV697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6awpiYVjWwa697/rules/rult4i6awsgSWUXHV697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4i6awpiYVjWwa697"
+    },
+    {
+      "id": "rult4i6awqTrPopq6697",
+      "status": "ACTIVE",
+      "name": "Catch-all Rule",
+      "priority": 99,
+      "created": "2025-07-11T07:40:01.000Z",
+      "lastUpdated": "2025-07-11T13:01:49.000Z",
+      "system": true,
+      "conditions": null,
+      "actions": {
+        "appSignOn": {
+          "access": "ALLOW",
+          "verificationMethod": {
+            "factorMode": "2FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT48H",
+            "constraints": [
+              {
+                "knowledge": {
+                  "required": true,
+                  "types": [
+                    "password"
+                  ],
+                  "reauthenticateIn": "PT48H"
+                },
+                "possession": {
+                  "required": true,
+                  "userVerification": "REQUIRED",
+                  "userVerificationMethods": [
+                    "BIOMETRICS"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6awpiYVjWwa697/rules/rult4i6awqTrPopq6697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4i6awpiYVjWwa697"
+    },
+    {
+      "id": "rult4i6awx7YIdL3U697",
+      "status": "ACTIVE",
+      "name": "Catch-all Rule",
+      "priority": 99,
+      "created": "2025-07-11T07:40:01.000Z",
+      "lastUpdated": "2025-07-11T07:40:03.000Z",
+      "system": true,
+      "conditions": null,
+      "actions": {
+        "appSignOn": {
+          "access": "ALLOW",
+          "verificationMethod": {
+            "factorMode": "2FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT12H"
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6aww6yZzPsh697/rules/rult4i6awx7YIdL3U697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4i6aww6yZzPsh697"
+    },
+    {
+      "id": "rult4i6ax0DbwxSD6697",
+      "status": "ACTIVE",
+      "name": "Catch-all Rule",
+      "priority": 99,
+      "created": "2025-07-11T07:40:01.000Z",
+      "lastUpdated": "2025-07-11T07:40:03.000Z",
+      "system": true,
+      "conditions": null,
+      "actions": {
+        "appSignOn": {
+          "access": "ALLOW",
+          "verificationMethod": {
+            "factorMode": "2FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT12H"
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6awzutaerCN697/rules/rult4i6ax0DbwxSD6697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4i6awzutaerCN697"
+    },
+    {
+      "id": "rult4i6ay7POeBLIo697",
+      "status": "ACTIVE",
+      "name": "Catch-all Rule",
+      "priority": 99,
+      "created": "2025-07-11T07:40:01.000Z",
+      "lastUpdated": "2025-07-11T11:47:58.000Z",
+      "system": true,
+      "conditions": null,
+      "actions": {
+        "appSignOn": {
+          "access": "ALLOW",
+          "verificationMethod": {
+            "factorMode": "1FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT12H",
+            "constraints": [
+              {
+                "knowledge": {
+                  "required": true,
+                  "types": [
+                    "password"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay6Cxp4w3c697/rules/rult4i6ay7POeBLIo697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4i6ay6Cxp4w3c697"
+    },
+    {
+      "id": "rult4i6ayyWb29Lnj697",
+      "status": "ACTIVE",
+      "name": "Low risk",
+      "priority": 0,
+      "created": "2025-07-11T07:40:02.000Z",
+      "lastUpdated": "2025-07-11T07:40:02.000Z",
+      "system": false,
+      "conditions": {
+        "people": {
+          "users": {
+            "exclude": []
+          }
+        },
+        "network": {
+          "connection": "ANYWHERE"
+        },
+        "riskScore": {
+          "level": "LOW"
+        },
+        "userType": {
+          "include": [],
+          "exclude": []
+        }
+      },
+      "actions": {
+        "appSignOn": {
+          "access": "ALLOW",
+          "verificationMethod": {
+            "factorMode": "1FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT12H",
+            "constraints": [
+              {
+                "possession": {
+                  "required": true,
+                  "userPresence": "OPTIONAL"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ayxaqJwZu7697/rules/rult4i6ayyWb29Lnj697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ayxaqJwZu7697/rules/rult4i6ayyWb29Lnj697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4i6ayxaqJwZu7697"
+    },
+    {
+      "id": "rult4i6ayzOFpGAfh697",
+      "status": "ACTIVE",
+      "name": "Med risk",
+      "priority": 1,
+      "created": "2025-07-11T07:40:02.000Z",
+      "lastUpdated": "2025-07-11T07:40:02.000Z",
+      "system": false,
+      "conditions": {
+        "people": {
+          "users": {
+            "exclude": []
+          }
+        },
+        "network": {
+          "connection": "ANYWHERE"
+        },
+        "riskScore": {
+          "level": "MEDIUM"
+        },
+        "userType": {
+          "include": [],
+          "exclude": []
+        }
+      },
+      "actions": {
+        "appSignOn": {
+          "access": "ALLOW",
+          "verificationMethod": {
+            "factorMode": "1FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT12H",
+            "constraints": [
+              {
+                "possession": {
+                  "required": true,
+                  "userPresence": "OPTIONAL"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ayxaqJwZu7697/rules/rult4i6ayzOFpGAfh697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ayxaqJwZu7697/rules/rult4i6ayzOFpGAfh697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4i6ayxaqJwZu7697"
+    },
+    {
+      "id": "rult4i6az068WYtDT697",
+      "status": "ACTIVE",
+      "name": "High risk",
+      "priority": 2,
+      "created": "2025-07-11T07:40:02.000Z",
+      "lastUpdated": "2025-07-11T07:40:02.000Z",
+      "system": false,
+      "conditions": {
+        "people": {
+          "users": {
+            "exclude": []
+          }
+        },
+        "network": {
+          "connection": "ANYWHERE"
+        },
+        "riskScore": {
+          "level": "HIGH"
+        },
+        "userType": {
+          "include": [],
+          "exclude": []
+        }
+      },
+      "actions": {
+        "appSignOn": {
+          "access": "ALLOW",
+          "verificationMethod": {
+            "factorMode": "1FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT12H",
+            "constraints": [
+              {
+                "possession": {
+                  "required": true,
+                  "userPresence": "OPTIONAL"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ayxaqJwZu7697/rules/rult4i6az068WYtDT697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ayxaqJwZu7697/rules/rult4i6az068WYtDT697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4i6ayxaqJwZu7697"
+    },
+    {
+      "id": "rult4i6az191ffuN2697",
+      "status": "ACTIVE",
+      "name": "Catch-all Rule",
+      "priority": 99,
+      "created": "2025-07-11T07:40:02.000Z",
+      "lastUpdated": "2025-07-11T07:40:02.000Z",
+      "system": true,
+      "conditions": null,
+      "actions": {
+        "appSignOn": {
+          "access": "DENY",
+          "verificationMethod": {
+            "factorMode": "2FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT12H",
+            "constraints": [
+              {
+                "possession": {
+                  "required": true,
+                  "deviceBound": "REQUIRED"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ayxaqJwZu7697/rules/rult4i6az191ffuN2697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4i6ayxaqJwZu7697"
+    },
+    {
+      "id": "rult4i5h5xKBm17z3697",
+      "status": "INACTIVE",
+      "name": "Managed = 1FA (silent OV)",
+      "priority": 0,
+      "created": "2025-07-11T07:41:18.000Z",
+      "lastUpdated": "2025-07-14T09:54:00.000Z",
+      "system": false,
+      "conditions": {
+        "people": {
+          "users": {
+            "exclude": []
+          }
+        },
+        "network": {
+          "connection": "ANYWHERE"
+        },
+        "device": {
+          "registered": true,
+          "managed": true
+        },
+        "riskScore": {
+          "level": "ANY"
+        },
+        "userType": {
+          "include": [],
+          "exclude": []
+        }
+      },
+      "actions": {
+        "appSignOn": {
+          "access": "ALLOW",
+          "verificationMethod": {
+            "factorMode": "2FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT2H",
+            "constraints": [
+              {
+                "possession": {
+                  "required": true,
+                  "deviceBound": "REQUIRED",
+                  "userPresence": "OPTIONAL"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "_links": {
+        "activate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i9tjdUwJyPXD697/rules/rult4i5h5xKBm17z3697/lifecycle/activate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        },
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i9tjdUwJyPXD697/rules/rult4i5h5xKBm17z3697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4i9tjdUwJyPXD697"
+    },
+    {
+      "id": "rult4i4po90yhNByI697",
+      "status": "ACTIVE",
+      "name": "Registered + High = 2FA (DB)",
+      "priority": 1,
+      "created": "2025-07-11T07:41:18.000Z",
+      "lastUpdated": "2025-07-11T07:41:18.000Z",
+      "system": false,
+      "conditions": {
+        "people": {
+          "users": {
+            "exclude": []
+          }
+        },
+        "network": {
+          "connection": "ANYWHERE"
+        },
+        "device": {
+          "registered": true,
+          "managed": false
+        },
+        "riskScore": {
+          "level": "HIGH"
+        },
+        "userType": {
+          "include": [],
+          "exclude": []
+        }
+      },
+      "actions": {
+        "appSignOn": {
+          "access": "ALLOW",
+          "verificationMethod": {
+            "factorMode": "2FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT2H",
+            "constraints": [
+              {
+                "possession": {
+                  "required": true,
+                  "deviceBound": "REQUIRED"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i9tjdUwJyPXD697/rules/rult4i4po90yhNByI697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i9tjdUwJyPXD697/rules/rult4i4po90yhNByI697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4i9tjdUwJyPXD697"
+    },
+    {
+      "id": "rult4hvsbrqrCMzKq697",
+      "status": "ACTIVE",
+      "name": "Registered = 1FA (silent OV + DB)",
+      "priority": 2,
+      "created": "2025-07-11T07:41:18.000Z",
+      "lastUpdated": "2025-07-14T09:54:13.000Z",
+      "system": false,
+      "conditions": {
+        "people": {
+          "users": {
+            "exclude": []
+          }
+        },
+        "network": {
+          "connection": "ANYWHERE"
+        },
+        "device": {
+          "registered": true,
+          "managed": false
+        },
+        "riskScore": {
+          "level": "ANY"
+        },
+        "userType": {
+          "include": [],
+          "exclude": []
+        }
+      },
+      "actions": {
+        "appSignOn": {
+          "access": "ALLOW",
+          "verificationMethod": {
+            "factorMode": "1FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT48H",
+            "constraints": [
+              {
+                "possession": {
+                  "required": true,
+                  "deviceBound": "REQUIRED",
+                  "userPresence": "OPTIONAL"
+                }
+              },
+              {
+                "knowledge": {
+                  "required": true
+                }
+              }
+            ]
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i9tjdUwJyPXD697/rules/rult4hvsbrqrCMzKq697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i9tjdUwJyPXD697/rules/rult4hvsbrqrCMzKq697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4i9tjdUwJyPXD697"
+    },
+    {
+      "id": "rult4i9tje1WckHab697",
+      "status": "ACTIVE",
+      "name": "Catch-all Rule",
+      "priority": 99,
+      "created": "2025-07-11T07:41:17.000Z",
+      "lastUpdated": "2025-07-11T07:41:17.000Z",
+      "system": true,
+      "conditions": null,
+      "actions": {
+        "appSignOn": {
+          "access": "ALLOW",
+          "verificationMethod": {
+            "factorMode": "2FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT12H",
+            "constraints": [
+              {
+                "possession": {
+                  "required": true,
+                  "deviceBound": "REQUIRED"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i9tjdUwJyPXD697/rules/rult4i9tje1WckHab697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4i9tjdUwJyPXD697"
+    },
+    {
+      "id": "rult4id9jnqz0BNW3697",
+      "status": "INACTIVE",
+      "name": "Managed + High Risk = 2FA (DB + PR) Every-time",
+      "priority": 1,
+      "created": "2025-07-11T07:41:23.000Z",
+      "lastUpdated": "2025-07-11T12:07:49.000Z",
+      "system": false,
+      "conditions": {
+        "people": {
+          "users": {
+            "exclude": []
+          }
+        },
+        "network": {
+          "connection": "ANYWHERE"
+        },
+        "device": {
+          "registered": true,
+          "managed": true
+        },
+        "riskScore": {
+          "level": "HIGH"
+        },
+        "userType": {
+          "include": [],
+          "exclude": []
+        }
+      },
+      "actions": {
+        "appSignOn": {
+          "access": "ALLOW",
+          "verificationMethod": {
+            "factorMode": "2FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT0S",
+            "constraints": [
+              {
+                "possession": {
+                  "required": true,
+                  "deviceBound": "REQUIRED",
+                  "phishingResistant": "REQUIRED"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "_links": {
+        "activate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4id6fcg2TF1Xk697/rules/rult4id9jnqz0BNW3697/lifecycle/activate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        },
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4id6fcg2TF1Xk697/rules/rult4id9jnqz0BNW3697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4id6fcg2TF1Xk697"
+    },
+    {
+      "id": "rult4hvsbsTG9xDwc697",
+      "status": "ACTIVE",
+      "name": "Managed = 2FA (DB) Every-time",
+      "priority": 2,
+      "created": "2025-07-11T07:41:23.000Z",
+      "lastUpdated": "2025-07-11T07:41:23.000Z",
+      "system": false,
+      "conditions": {
+        "people": {
+          "users": {
+            "exclude": []
+          }
+        },
+        "network": {
+          "connection": "ANYWHERE"
+        },
+        "device": {
+          "registered": true,
+          "managed": true
+        },
+        "riskScore": {
+          "level": "ANY"
+        },
+        "userType": {
+          "include": [],
+          "exclude": []
+        }
+      },
+      "actions": {
+        "appSignOn": {
+          "access": "ALLOW",
+          "verificationMethod": {
+            "factorMode": "2FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT0S",
+            "constraints": [
+              {
+                "possession": {
+                  "required": true,
+                  "deviceBound": "REQUIRED"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4id6fcg2TF1Xk697/rules/rult4hvsbsTG9xDwc697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT",
+              "DELETE"
+            ]
+          }
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4id6fcg2TF1Xk697/rules/rult4hvsbsTG9xDwc697/lifecycle/deactivate",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4id6fcg2TF1Xk697"
+    },
+    {
+      "id": "rult4id6fdPbpoTWa697",
+      "status": "ACTIVE",
+      "name": "Catch-all Rule",
+      "priority": 99,
+      "created": "2025-07-11T07:41:22.000Z",
+      "lastUpdated": "2025-07-11T07:41:23.000Z",
+      "system": true,
+      "conditions": null,
+      "actions": {
+        "appSignOn": {
+          "access": "DENY",
+          "verificationMethod": {
+            "factorMode": "2FA",
+            "type": "ASSURANCE",
+            "reauthenticateIn": "PT1M",
+            "constraints": []
+          }
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4id6fcg2TF1Xk697/rules/rult4id6fdPbpoTWa697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT"
+            ]
+          }
+        }
+      },
+      "type": "ACCESS_POLICY",
+      "policyId": "rstt4id6fcg2TF1Xk697"
+    },
+    {
+      "id": "0prt4i6avtpIMQRwJ697",
+      "status": "ACTIVE",
+      "name": "Default Rule",
+      "priority": 1,
+      "created": "2025-07-11T07:39:59.000Z",
+      "lastUpdated": "2025-07-11T07:40:01.000Z",
+      "system": true,
+      "conditions": {
+        "people": {
+          "users": {
+            "exclude": []
+          }
+        },
+        "network": {
+          "connection": "ANYWHERE"
+        }
+      },
+      "actions": {
+        "passwordChange": {
+          "access": "ALLOW"
+        },
+        "selfServicePasswordReset": {
+          "access": "ALLOW",
+          "requirement": {
+            "primary": {
+              "methods": [
+                "email"
+              ]
+            },
+            "stepUp": {
+              "required": false
+            }
+          }
+        },
+        "selfServiceUnlock": {
+          "access": "DENY"
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/00pt4i6avsxNDXjcz697/rules/0prt4i6avtpIMQRwJ697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT"
+            ]
+          }
+        }
+      },
+      "type": "PASSWORD",
+      "policyId": "00pt4i6avsxNDXjcz697"
+    },
+    {
+      "id": "0prt4i6atuGthhLVm697",
+      "status": "ACTIVE",
+      "name": "Default Rule",
+      "priority": 1,
+      "created": "2025-07-11T07:39:57.000Z",
+      "lastUpdated": "2025-07-11T07:39:57.000Z",
+      "system": true,
+      "conditions": {
+        "network": {
+          "connection": "ANYWHERE"
+        },
+        "platform": {
+          "include": [],
+          "exclude": []
+        },
+        "userIdentifier": {
+          "patterns": []
+        },
+        "app": {
+          "include": [],
+          "exclude": []
+        }
+      },
+      "actions": {
+        "idp": {
+          "providers": [
+            {
+              "type": "OKTA"
+            }
+          ],
+          "idpSelectionType": "SPECIFIC"
+        }
+      },
+      "_links": {
+        "self": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/00pt4i6att29RFimG697/rules/0prt4i6atuGthhLVm697",
+          "hints": {
+            "allow": [
+              "GET",
+              "PUT"
+            ]
+          }
+        }
+      },
+      "type": "IDP_DISCOVERY",
+      "policyId": "00pt4i6att29RFimG697"
+    }
+  ],
+  "apps": [
+    {
+      "id": "0oat4i6apzukcQ5CM697",
+      "orn": "orn:okta:idp:00ot4i6apfm6iOsBb697:apps:saasure:0oat4i6apzukcQ5CM697",
+      "name": "saasure",
+      "label": "Okta Admin Console",
+      "status": "ACTIVE",
+      "lastUpdated": "2025-07-11T08:28:18.000Z",
+      "created": "2025-07-11T07:39:54.000Z",
+      "accessibility": {
+        "selfService": false,
+        "errorRedirectUrl": null,
+        "loginRedirectUrl": null
+      },
+      "visibility": {
+        "autoSubmitToolbar": false,
+        "hide": {
+          "iOS": false,
+          "web": false
+        },
+        "appLinks": {
+          "admin": true
+        }
+      },
+      "features": [],
+      "signOnMode": "OPENID_CONNECT",
+      "credentials": {
+        "userNameTemplate": {
+          "template": "${source.login}",
+          "type": "BUILT_IN"
+        },
+        "signing": {
+          "kid": "n61GGRFk9X5GMNLDVk14k-C6hPkuSE4mNBUs0h4Nd7s"
+        }
+      },
+      "universalLogout": {
+        "status": "UNSUPPORTED"
+      },
+      "settings": {
+        "app": {},
+        "notifications": {
+          "vpn": {
+            "network": {
+              "connection": "DISABLED"
+            },
+            "message": null,
+            "helpUrl": null
+          }
+        },
+        "manualProvisioning": false,
+        "implicitAssignment": false,
+        "emOptInStatus": "ENABLED"
+      },
+      "_links": {
+        "uploadLogo": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i6apzukcQ5CM697/logo",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        },
+        "appLinks": [
+          {
+            "name": "admin",
+            "href": "https://demo-demo-intragen.okta.com/home/saasure/0oat4i6apzukcQ5CM697/2",
+            "type": "text/html"
+          }
+        ],
+        "profileEnrollment": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay8egLhx1k697"
+        },
+        "policies": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i6apzukcQ5CM697/policies",
+          "hints": {
+            "allow": [
+              "PUT"
+            ]
+          }
+        },
+        "groups": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i6apzukcQ5CM697/groups"
+        },
+        "logo": [
+          {
+            "name": "medium",
+            "href": "https://ok14static.oktacdn.com/assets/img/logos/okta_admin_app.da3325676d57eaf566cb786dd0c7a819.png",
+            "type": "image/png"
+          }
+        ],
+        "accessPolicy": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6awpiYVjWwa697"
+        },
+        "users": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i6apzukcQ5CM697/users"
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i6apzukcQ5CM697/lifecycle/deactivate"
+        }
+      }
+    },
+    {
+      "id": "0oat4i6aqrXpCMJjO697",
+      "orn": "orn:okta:idp:00ot4i6apfm6iOsBb697:apps:okta_enduser:0oat4i6aqrXpCMJjO697",
+      "name": "okta_enduser",
+      "label": "Okta Dashboard",
+      "status": "ACTIVE",
+      "lastUpdated": "2025-07-11T07:39:55.000Z",
+      "created": "2025-07-11T07:39:55.000Z",
+      "accessibility": {
+        "selfService": false,
+        "errorRedirectUrl": null,
+        "loginRedirectUrl": null
+      },
+      "visibility": {
+        "autoSubmitToolbar": false,
+        "hide": {
+          "iOS": false,
+          "web": false
+        },
+        "appLinks": {}
+      },
+      "features": [],
+      "signOnMode": "OPENID_CONNECT",
+      "credentials": {
+        "userNameTemplate": {
+          "template": "${source.login}",
+          "type": "BUILT_IN"
+        },
+        "signing": {
+          "kid": "n61GGRFk9X5GMNLDVk14k-C6hPkuSE4mNBUs0h4Nd7s"
+        }
+      },
+      "universalLogout": {
+        "status": "UNSUPPORTED"
+      },
+      "settings": {
+        "app": {},
+        "notifications": {
+          "vpn": {
+            "network": {
+              "connection": "DISABLED"
+            },
+            "message": null,
+            "helpUrl": null
+          }
+        },
+        "manualProvisioning": false,
+        "implicitAssignment": false,
+        "emOptInStatus": "NONE"
+      },
+      "_links": {
+        "uploadLogo": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i6aqrXpCMJjO697/logo",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        },
+        "appLinks": [],
+        "profileEnrollment": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay8egLhx1k697"
+        },
+        "policies": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i6aqrXpCMJjO697/policies",
+          "hints": {
+            "allow": [
+              "PUT"
+            ]
+          }
+        },
+        "groups": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i6aqrXpCMJjO697/groups"
+        },
+        "logo": [
+          {
+            "name": "medium",
+            "href": "https://ok14static.oktacdn.com/assets/img/logos/okta-logo-end-user-dashboard.fc6d8fdbcb8cb4c933d009e71456cec6.svg",
+            "type": "image/png"
+          }
+        ],
+        "accessPolicy": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6aww6yZzPsh697"
+        },
+        "users": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i6aqrXpCMJjO697/users"
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i6aqrXpCMJjO697/lifecycle/deactivate"
+        }
+      }
+    },
+    {
+      "id": "0oat4i6avhJuRABvZ697",
+      "orn": "orn:okta:idp:00ot4i6apfm6iOsBb697:apps:okta_browser_plugin:0oat4i6avhJuRABvZ697",
+      "name": "okta_browser_plugin",
+      "label": "Okta Browser Plugin",
+      "status": "ACTIVE",
+      "lastUpdated": "2025-07-11T07:39:59.000Z",
+      "created": "2025-07-11T07:39:59.000Z",
+      "accessibility": {
+        "selfService": false,
+        "errorRedirectUrl": null,
+        "loginRedirectUrl": null
+      },
+      "visibility": {
+        "autoSubmitToolbar": false,
+        "hide": {
+          "iOS": false,
+          "web": false
+        },
+        "appLinks": {}
+      },
+      "features": [],
+      "signOnMode": "OPENID_CONNECT",
+      "credentials": {
+        "userNameTemplate": {
+          "template": "${source.login}",
+          "type": "BUILT_IN"
+        },
+        "signing": {
+          "kid": "n61GGRFk9X5GMNLDVk14k-C6hPkuSE4mNBUs0h4Nd7s"
+        }
+      },
+      "universalLogout": {
+        "status": "UNSUPPORTED"
+      },
+      "settings": {
+        "app": {},
+        "notifications": {
+          "vpn": {
+            "network": {
+              "connection": "DISABLED"
+            },
+            "message": null,
+            "helpUrl": null
+          }
+        },
+        "manualProvisioning": false,
+        "implicitAssignment": false,
+        "emOptInStatus": "NONE"
+      },
+      "_links": {
+        "uploadLogo": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i6avhJuRABvZ697/logo",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        },
+        "appLinks": [],
+        "profileEnrollment": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay8egLhx1k697"
+        },
+        "policies": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i6avhJuRABvZ697/policies",
+          "hints": {
+            "allow": [
+              "PUT"
+            ]
+          }
+        },
+        "groups": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i6avhJuRABvZ697/groups"
+        },
+        "logo": [
+          {
+            "name": "medium",
+            "href": "https://ok14static.oktacdn.com/assets/img/logos/okta-logo-browser-plugin.1db9f55776407dfc548a5d6985ff280a.svg",
+            "type": "image/png"
+          }
+        ],
+        "accessPolicy": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6awzutaerCN697"
+        },
+        "users": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i6avhJuRABvZ697/users"
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i6avhJuRABvZ697/lifecycle/deactivate"
+        }
+      }
+    },
+    {
+      "id": "0oat4i8l8y1POQMcQ697",
+      "orn": "orn:okta:idp:00ot4i6apfm6iOsBb697:apps:oidc_client:0oat4i8l8y1POQMcQ697",
+      "name": "oidc_client",
+      "label": "Demo Platform Management",
+      "status": "ACTIVE",
+      "lastUpdated": "2025-07-11T07:40:38.000Z",
+      "created": "2025-07-11T07:40:38.000Z",
+      "accessibility": {
+        "selfService": false,
+        "errorRedirectUrl": null,
+        "loginRedirectUrl": null
+      },
+      "visibility": {
+        "autoLaunch": false,
+        "autoSubmitToolbar": false,
+        "hide": {
+          "iOS": true,
+          "web": true
+        },
+        "appLinks": {
+          "oidc_client_link": true
+        }
+      },
+      "features": [],
+      "signOnMode": "OPENID_CONNECT",
+      "credentials": {
+        "userNameTemplate": {
+          "template": "${source.login}",
+          "type": "BUILT_IN"
+        },
+        "signing": {
+          "kid": "n61GGRFk9X5GMNLDVk14k-C6hPkuSE4mNBUs0h4Nd7s"
+        },
+        "oauthClient": {
+          "autoKeyRotation": true,
+          "client_id": "0oat4i8l8y1POQMcQ697",
+          "token_endpoint_auth_method": "private_key_jwt",
+          "pkce_required": false
+        }
+      },
+      "universalLogout": {
+        "status": "DISABLED",
+        "supportType": "FULL",
+        "identityStack": "NOT_SHARED",
+        "protocol": "GLOBAL_TOKEN_REVOCATION"
+      },
+      "settings": {
+        "app": {},
+        "notifications": {
+          "vpn": {
+            "network": {
+              "connection": "DISABLED"
+            },
+            "message": null,
+            "helpUrl": null
+          }
+        },
+        "manualProvisioning": false,
+        "implicitAssignment": false,
+        "emOptInStatus": "NONE",
+        "notes": {
+          "admin": null,
+          "enduser": null
+        },
+        "oauthClient": {
+          "client_uri": null,
+          "logo_uri": null,
+          "redirect_uris": [],
+          "response_types": [
+            "token"
+          ],
+          "grant_types": [
+            "client_credentials"
+          ],
+          "jwks": {
+            "keys": [
+              {
+                "kty": "RSA",
+                "id": "pkst4i8l9vyjOqknI697",
+                "status": "ACTIVE",
+                "alg": "RS256",
+                "kid": "demoplatform",
+                "use": "sig",
+                "e": "AQAB",
+                "n": "4jkJYrHn0YSA667RyXAZa4pqZvCjzYuQHF62n0qs4f_qBBpUVu0xlKif0l-8QeBEmmZtpmN3-oQr90MkRtG15ycKLx1nxdpud7q_5ZWqyd-zMegmbmt3SbiOid78hdtxze0JIqQCfT_ViUAk-xMlREO0d44kQUhhLa-BPLX_RkivBF7z9DKh5vOatKyyyx68FoBugv4DjKJpJlx_iwCvItXFGoxlD8yHH5GBCacpwyxcPwKs-dn918QUqn6oLQNAGpzbSbI4-HRwLLZrpMZAcQP9SHInvYKXr7kfnr-dGFv785ZrAyzRgHfSK8nN368RgCHB_9pzwAhKhUJQT7hG3w"
+              }
+            ]
+          },
+          "application_type": "service",
+          "consent_method": "TRUSTED",
+          "issuer_mode": "DYNAMIC",
+          "idp_initiated_login": {
+            "mode": "DISABLED",
+            "default_scope": []
+          },
+          "wildcard_redirect": "DISABLED",
+          "dpop_bound_access_tokens": false
+        }
+      },
+      "_links": {
+        "uploadLogo": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i8l8y1POQMcQ697/logo",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        },
+        "appLinks": [
+          {
+            "name": "oidc_client_link",
+            "href": "https://demo-demo-intragen.okta.com/home/oidc_client/0oat4i8l8y1POQMcQ697/aln177a159h7Zf52X0g8",
+            "type": "text/html"
+          }
+        ],
+        "profileEnrollment": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay8egLhx1k697"
+        },
+        "policies": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i8l8y1POQMcQ697/policies",
+          "hints": {
+            "allow": [
+              "PUT"
+            ]
+          }
+        },
+        "groups": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i8l8y1POQMcQ697/groups"
+        },
+        "logo": [
+          {
+            "name": "medium",
+            "href": "https://ok14static.oktacdn.com/assets/img/logos/default.6770228fb0dab49a1695ef440a5279bb.png",
+            "type": "image/png"
+          }
+        ],
+        "clientCredentials": [
+          {
+            "name": "jwks",
+            "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i8l8y1POQMcQ697/credentials/jwks"
+          }
+        ],
+        "accessPolicy": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay6Cxp4w3c697"
+        },
+        "users": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i8l8y1POQMcQ697/users"
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4i8l8y1POQMcQ697/lifecycle/deactivate"
+        }
+      }
+    },
+    {
+      "id": "0oat4ij8h8FY8pKuj697",
+      "orn": "orn:okta:idp:00ot4i6apfm6iOsBb697:apps:okta_iga:0oat4ij8h8FY8pKuj697",
+      "name": "okta_iga",
+      "label": "Okta Access Certifications",
+      "status": "ACTIVE",
+      "lastUpdated": "2025-07-11T07:40:38.000Z",
+      "created": "2025-07-11T07:40:38.000Z",
+      "accessibility": {
+        "selfService": false,
+        "errorRedirectUrl": null,
+        "loginRedirectUrl": null
+      },
+      "visibility": {
+        "autoSubmitToolbar": false,
+        "hide": {
+          "iOS": false,
+          "web": false
+        },
+        "appLinks": {}
+      },
+      "features": [],
+      "signOnMode": "OPENID_CONNECT",
+      "credentials": {
+        "userNameTemplate": {
+          "template": "${source.login}",
+          "type": "BUILT_IN"
+        },
+        "signing": {
+          "kid": "n61GGRFk9X5GMNLDVk14k-C6hPkuSE4mNBUs0h4Nd7s"
+        }
+      },
+      "universalLogout": {
+        "status": "UNSUPPORTED"
+      },
+      "settings": {
+        "app": {},
+        "notifications": {
+          "vpn": {
+            "network": {
+              "connection": "DISABLED"
+            },
+            "message": null,
+            "helpUrl": null
+          }
+        },
+        "manualProvisioning": false,
+        "implicitAssignment": false,
+        "emOptInStatus": "NONE"
+      },
+      "_links": {
+        "uploadLogo": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ij8h8FY8pKuj697/logo",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        },
+        "appLinks": [],
+        "profileEnrollment": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay8egLhx1k697"
+        },
+        "policies": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ij8h8FY8pKuj697/policies",
+          "hints": {
+            "allow": [
+              "PUT"
+            ]
+          }
+        },
+        "groups": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ij8h8FY8pKuj697/groups"
+        },
+        "logo": [
+          {
+            "name": "medium",
+            "href": "https://ok14static.oktacdn.com/assets/img/logos/iga_admin_app_logo.6386c588b45087ec4054523aff62f598.png",
+            "type": "image/png"
+          }
+        ],
+        "accessPolicy": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay6Cxp4w3c697"
+        },
+        "users": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ij8h8FY8pKuj697/users"
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ij8h8FY8pKuj697/lifecycle/deactivate"
+        }
+      }
+    },
+    {
+      "id": "0oat4ij8hprSZ3Y5M697",
+      "orn": "orn:okta:idp:00ot4i6apfm6iOsBb697:apps:okta_iga_reviewer:0oat4ij8hprSZ3Y5M697",
+      "name": "okta_iga_reviewer",
+      "label": "Okta Access Certification Reviews",
+      "status": "ACTIVE",
+      "lastUpdated": "2025-07-11T07:40:38.000Z",
+      "created": "2025-07-11T07:40:38.000Z",
+      "accessibility": {
+        "selfService": false,
+        "errorRedirectUrl": null,
+        "loginRedirectUrl": null
+      },
+      "visibility": {
+        "autoLaunch": false,
+        "autoSubmitToolbar": false,
+        "hide": {
+          "iOS": false,
+          "web": false
+        },
+        "appLinks": {
+          "login": true
+        }
+      },
+      "features": [],
+      "signOnMode": "OPENID_CONNECT",
+      "credentials": {
+        "userNameTemplate": {
+          "template": "${source.login}",
+          "type": "BUILT_IN"
+        },
+        "signing": {
+          "kid": "n61GGRFk9X5GMNLDVk14k-C6hPkuSE4mNBUs0h4Nd7s"
+        }
+      },
+      "universalLogout": {
+        "status": "UNSUPPORTED"
+      },
+      "settings": {
+        "app": {
+          "initiateLoginURI": null
+        },
+        "notifications": {
+          "vpn": {
+            "network": {
+              "connection": "DISABLED"
+            },
+            "message": null,
+            "helpUrl": null
+          }
+        },
+        "manualProvisioning": false,
+        "implicitAssignment": false,
+        "emOptInStatus": "NONE",
+        "notes": {
+          "admin": null,
+          "enduser": null
+        }
+      },
+      "_links": {
+        "uploadLogo": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ij8hprSZ3Y5M697/logo",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        },
+        "appLinks": [
+          {
+            "name": "login",
+            "href": "https://demo-demo-intragen.okta.com/home/okta_iga_reviewer/0oat4ij8hprSZ3Y5M697/aln99ley5E1bkaiQF0g6",
+            "type": "text/html"
+          }
+        ],
+        "profileEnrollment": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay8egLhx1k697"
+        },
+        "policies": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ij8hprSZ3Y5M697/policies",
+          "hints": {
+            "allow": [
+              "PUT"
+            ]
+          }
+        },
+        "groups": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ij8hprSZ3Y5M697/groups"
+        },
+        "logo": [
+          {
+            "name": "medium",
+            "href": "https://ok14static.oktacdn.com/assets/img/logos/iga_reviewer_app_logo.2c68be805203d9708e6bc63179a9e0ae.png",
+            "type": "image/png"
+          }
+        ],
+        "accessPolicy": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay6Cxp4w3c697"
+        },
+        "users": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ij8hprSZ3Y5M697/users"
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ij8hprSZ3Y5M697/lifecycle/deactivate"
+        }
+      }
+    },
+    {
+      "id": "0oat4ij8i0ruZB33c697",
+      "orn": "orn:okta:idp:00ot4i6apfm6iOsBb697:apps:okta_entitlement_management:0oat4ij8i0ruZB33c697",
+      "name": "okta_entitlement_management",
+      "label": "Okta Entitlement Management",
+      "status": "ACTIVE",
+      "lastUpdated": "2025-07-11T07:40:38.000Z",
+      "created": "2025-07-11T07:40:38.000Z",
+      "accessibility": {
+        "selfService": false,
+        "errorRedirectUrl": null,
+        "loginRedirectUrl": null
+      },
+      "visibility": {
+        "autoSubmitToolbar": false,
+        "hide": {
+          "iOS": false,
+          "web": false
+        },
+        "appLinks": {}
+      },
+      "features": [],
+      "signOnMode": "OPENID_CONNECT",
+      "credentials": {
+        "userNameTemplate": {
+          "template": "${source.login}",
+          "type": "BUILT_IN"
+        },
+        "signing": {
+          "kid": "n61GGRFk9X5GMNLDVk14k-C6hPkuSE4mNBUs0h4Nd7s"
+        }
+      },
+      "universalLogout": {
+        "status": "UNSUPPORTED"
+      },
+      "settings": {
+        "app": {},
+        "notifications": {
+          "vpn": {
+            "network": {
+              "connection": "DISABLED"
+            },
+            "message": null,
+            "helpUrl": null
+          }
+        },
+        "manualProvisioning": false,
+        "implicitAssignment": false,
+        "emOptInStatus": "NONE"
+      },
+      "_links": {
+        "uploadLogo": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ij8i0ruZB33c697/logo",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        },
+        "appLinks": [],
+        "profileEnrollment": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay8egLhx1k697"
+        },
+        "policies": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ij8i0ruZB33c697/policies",
+          "hints": {
+            "allow": [
+              "PUT"
+            ]
+          }
+        },
+        "groups": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ij8i0ruZB33c697/groups"
+        },
+        "logo": [
+          {
+            "name": "medium",
+            "href": "https://ok14static.oktacdn.com/assets/img/logos/iga_admin_app_logo.6386c588b45087ec4054523aff62f598.png",
+            "type": "image/png"
+          }
+        ],
+        "accessPolicy": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay6Cxp4w3c697"
+        },
+        "users": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ij8i0ruZB33c697/users"
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ij8i0ruZB33c697/lifecycle/deactivate"
+        }
+      }
+    },
+    {
+      "id": "0oat4ijaq99ob2ljh697",
+      "orn": "orn:okta:idp:00ot4i6apfm6iOsBb697:apps:okta_flow_sso:0oat4ijaq99ob2ljh697",
+      "name": "okta_flow_sso",
+      "label": "Okta Workflows",
+      "status": "ACTIVE",
+      "lastUpdated": "2025-07-11T07:41:38.000Z",
+      "created": "2025-07-11T07:40:38.000Z",
+      "accessibility": {
+        "selfService": false,
+        "errorRedirectUrl": null,
+        "loginRedirectUrl": null
+      },
+      "visibility": {
+        "autoLaunch": false,
+        "autoSubmitToolbar": false,
+        "hide": {
+          "iOS": false,
+          "web": false
+        },
+        "appLinks": {
+          "workflow_login": true
+        }
+      },
+      "features": [
+        "PUSH_NEW_USERS",
+        "PUSH_USER_DEACTIVATION",
+        "SCIM_PROVISIONING",
+        "GROUP_PUSH",
+        "REACTIVATE_USERS",
+        "PUSH_PROFILE_UPDATES"
+      ],
+      "signOnMode": "OPENID_CONNECT",
+      "credentials": {
+        "userNameTemplate": {
+          "template": "${source.login}",
+          "type": "BUILT_IN"
+        },
+        "signing": {
+          "kid": "n61GGRFk9X5GMNLDVk14k-C6hPkuSE4mNBUs0h4Nd7s"
+        }
+      },
+      "universalLogout": {
+        "status": "UNSUPPORTED"
+      },
+      "settings": {
+        "app": {
+          "redirectURI": "https://demo-demo-intragen.workflows.okta.com/oidc/0oat4ijaq99ob2ljh697/cb",
+          "initiateLoginURI": "https://demo-demo-intragen.workflows.okta.com/oidc/0oat4ijaq99ob2ljh697/login"
+        },
+        "notifications": {
+          "vpn": {
+            "network": {
+              "connection": "DISABLED"
+            },
+            "message": null,
+            "helpUrl": null
+          }
+        },
+        "manualProvisioning": false,
+        "implicitAssignment": false,
+        "emOptInStatus": "NONE",
+        "notes": {
+          "admin": null,
+          "enduser": null
+        }
+      },
+      "_links": {
+        "uploadLogo": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijaq99ob2ljh697/logo",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        },
+        "appLinks": [
+          {
+            "name": "workflow_login",
+            "href": "https://demo-demo-intragen.okta.com/home/okta_flow_sso/0oat4ijaq99ob2ljh697/alnbibn6b0OPFATt20g7",
+            "type": "text/html"
+          }
+        ],
+        "profileEnrollment": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay8egLhx1k697"
+        },
+        "policies": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijaq99ob2ljh697/policies",
+          "hints": {
+            "allow": [
+              "PUT"
+            ]
+          }
+        },
+        "groups": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijaq99ob2ljh697/groups"
+        },
+        "logo": [
+          {
+            "name": "medium",
+            "href": "https://ok14static.oktacdn.com/assets/img/logos/okta-workflows.27df74eb53570679e5cc3a4b0f160602.png",
+            "type": "image/png"
+          }
+        ],
+        "clientCredentials": [
+          {
+            "name": "jwks",
+            "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijaq99ob2ljh697/credentials/jwks"
+          }
+        ],
+        "accessPolicy": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay6Cxp4w3c697"
+        },
+        "users": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijaq99ob2ljh697/users"
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijaq99ob2ljh697/lifecycle/deactivate"
+        }
+      }
+    },
+    {
+      "id": "0oat4ijar2qaaDwr0697",
+      "orn": "orn:okta:idp:00ot4i6apfm6iOsBb697:apps:flow:0oat4ijar2qaaDwr0697",
+      "name": "flow",
+      "label": "Okta Workflows OAuth",
+      "status": "ACTIVE",
+      "lastUpdated": "2025-07-11T07:40:40.000Z",
+      "created": "2025-07-11T07:40:39.000Z",
+      "accessibility": {
+        "selfService": false,
+        "errorRedirectUrl": null,
+        "loginRedirectUrl": null
+      },
+      "visibility": {
+        "autoLaunch": false,
+        "autoSubmitToolbar": false,
+        "hide": {
+          "iOS": true,
+          "web": true
+        },
+        "appLinks": {}
+      },
+      "features": [],
+      "signOnMode": "OPENID_CONNECT",
+      "credentials": {
+        "userNameTemplate": {
+          "template": "${source.login}",
+          "type": "BUILT_IN"
+        },
+        "signing": {
+          "kid": "n61GGRFk9X5GMNLDVk14k-C6hPkuSE4mNBUs0h4Nd7s"
+        }
+      },
+      "universalLogout": {
+        "status": "UNSUPPORTED"
+      },
+      "settings": {
+        "app": {
+          "redirectURI": "https://oauth.workflows.okta.com/oauth/okta/cb",
+          "serviceDomain": "https://oauth.workflows.okta.com"
+        },
+        "notifications": {
+          "vpn": {
+            "network": {
+              "connection": "DISABLED"
+            },
+            "message": null,
+            "helpUrl": null
+          }
+        },
+        "manualProvisioning": false,
+        "implicitAssignment": false,
+        "emOptInStatus": "NONE",
+        "notes": {
+          "admin": null,
+          "enduser": null
+        }
+      },
+      "_links": {
+        "uploadLogo": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijar2qaaDwr0697/logo",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        },
+        "appLinks": [],
+        "profileEnrollment": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay8egLhx1k697"
+        },
+        "policies": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijar2qaaDwr0697/policies",
+          "hints": {
+            "allow": [
+              "PUT"
+            ]
+          }
+        },
+        "groups": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijar2qaaDwr0697/groups"
+        },
+        "logo": [
+          {
+            "name": "medium",
+            "href": "https://ok14static.oktacdn.com/assets/img/logos/okta-workflows.27df74eb53570679e5cc3a4b0f160602.png",
+            "type": "image/png"
+          }
+        ],
+        "clientCredentials": [
+          {
+            "name": "secrets",
+            "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijar2qaaDwr0697/credentials/secrets"
+          }
+        ],
+        "accessPolicy": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay6Cxp4w3c697"
+        },
+        "users": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijar2qaaDwr0697/users"
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijar2qaaDwr0697/lifecycle/deactivate"
+        }
+      }
+    },
+    {
+      "id": "0oat4ijitsCt7DXLR697",
+      "orn": "orn:okta:idp:00ot4i6apfm6iOsBb697:apps:okta_access_requests_resource_catalog:0oat4ijitsCt7DXLR697",
+      "name": "okta_access_requests_resource_catalog",
+      "label": "Okta Identity Governance",
+      "status": "ACTIVE",
+      "lastUpdated": "2025-07-11T07:40:39.000Z",
+      "created": "2025-07-11T07:40:39.000Z",
+      "accessibility": {
+        "selfService": false,
+        "errorRedirectUrl": null,
+        "loginRedirectUrl": null
+      },
+      "visibility": {
+        "autoSubmitToolbar": false,
+        "hide": {
+          "iOS": false,
+          "web": false
+        },
+        "appLinks": {}
+      },
+      "features": [],
+      "signOnMode": "OPENID_CONNECT",
+      "credentials": {
+        "userNameTemplate": {
+          "template": "${source.login}",
+          "type": "BUILT_IN"
+        },
+        "signing": {
+          "kid": "n61GGRFk9X5GMNLDVk14k-C6hPkuSE4mNBUs0h4Nd7s"
+        }
+      },
+      "universalLogout": {
+        "status": "UNSUPPORTED"
+      },
+      "settings": {
+        "app": {},
+        "notifications": {
+          "vpn": {
+            "network": {
+              "connection": "DISABLED"
+            },
+            "message": null,
+            "helpUrl": null
+          }
+        },
+        "manualProvisioning": false,
+        "implicitAssignment": true,
+        "emOptInStatus": "NONE"
+      },
+      "_links": {
+        "uploadLogo": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijitsCt7DXLR697/logo",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        },
+        "appLinks": [],
+        "profileEnrollment": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay8egLhx1k697"
+        },
+        "policies": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijitsCt7DXLR697/policies",
+          "hints": {
+            "allow": [
+              "PUT"
+            ]
+          }
+        },
+        "groups": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijitsCt7DXLR697/groups"
+        },
+        "logo": [
+          {
+            "name": "medium",
+            "href": "https://ok14static.oktacdn.com/assets/img/logos/iga_admin_app_logo.6386c588b45087ec4054523aff62f598.png",
+            "type": "image/png"
+          }
+        ],
+        "accessPolicy": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay6Cxp4w3c697"
+        },
+        "users": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijitsCt7DXLR697/users"
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijitsCt7DXLR697/lifecycle/deactivate"
+        }
+      }
+    },
+    {
+      "id": "0oat4ijiu6VldX4Kj697",
+      "orn": "orn:okta:idp:00ot4i6apfm6iOsBb697:apps:okta_access_requests_admin:0oat4ijiu6VldX4Kj697",
+      "name": "okta_access_requests_admin",
+      "label": "Okta Access Requests Admin",
+      "status": "ACTIVE",
+      "lastUpdated": "2025-07-11T07:40:39.000Z",
+      "created": "2025-07-11T07:40:39.000Z",
+      "accessibility": {
+        "selfService": false,
+        "errorRedirectUrl": null,
+        "loginRedirectUrl": null
+      },
+      "visibility": {
+        "autoSubmitToolbar": false,
+        "hide": {
+          "iOS": false,
+          "web": false
+        },
+        "appLinks": {}
+      },
+      "features": [],
+      "signOnMode": "OPENID_CONNECT",
+      "credentials": {
+        "userNameTemplate": {
+          "template": "${source.login}",
+          "type": "BUILT_IN"
+        },
+        "signing": {
+          "kid": "n61GGRFk9X5GMNLDVk14k-C6hPkuSE4mNBUs0h4Nd7s"
+        }
+      },
+      "universalLogout": {
+        "status": "UNSUPPORTED"
+      },
+      "settings": {
+        "app": {},
+        "notifications": {
+          "vpn": {
+            "network": {
+              "connection": "DISABLED"
+            },
+            "message": null,
+            "helpUrl": null
+          }
+        },
+        "manualProvisioning": false,
+        "implicitAssignment": false,
+        "emOptInStatus": "NONE"
+      },
+      "_links": {
+        "uploadLogo": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijiu6VldX4Kj697/logo",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        },
+        "appLinks": [],
+        "profileEnrollment": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay8egLhx1k697"
+        },
+        "policies": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijiu6VldX4Kj697/policies",
+          "hints": {
+            "allow": [
+              "PUT"
+            ]
+          }
+        },
+        "groups": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijiu6VldX4Kj697/groups"
+        },
+        "logo": [
+          {
+            "name": "medium",
+            "href": "https://ok14static.oktacdn.com/assets/img/logos/iga_admin_app_logo.6386c588b45087ec4054523aff62f598.png",
+            "type": "image/png"
+          }
+        ],
+        "accessPolicy": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay6Cxp4w3c697"
+        },
+        "users": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijiu6VldX4Kj697/users"
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4ijiu6VldX4Kj697/lifecycle/deactivate"
+        }
+      }
+    },
+    {
+      "id": "0oat4in8joky9fc8h697",
+      "orn": "orn:okta:idp:00ot4i6apfm6iOsBb697:apps:okta_atspoke_sso:0oat4in8joky9fc8h697",
+      "name": "okta_atspoke_sso",
+      "label": "Okta Access Requests",
+      "status": "ACTIVE",
+      "lastUpdated": "2025-07-11T07:47:50.000Z",
+      "created": "2025-07-11T07:47:38.000Z",
+      "accessibility": {
+        "selfService": false,
+        "errorRedirectUrl": null,
+        "loginRedirectUrl": null
+      },
+      "visibility": {
+        "autoLaunch": false,
+        "autoSubmitToolbar": false,
+        "hide": {
+          "iOS": false,
+          "web": false
+        },
+        "appLinks": {
+          "login": true
+        }
+      },
+      "features": [
+        "PUSH_NEW_USERS",
+        "PUSH_USER_DEACTIVATION",
+        "SCIM_PROVISIONING",
+        "GROUP_PUSH",
+        "REACTIVATE_USERS",
+        "PUSH_PROFILE_UPDATES"
+      ],
+      "signOnMode": "OPENID_CONNECT",
+      "credentials": {
+        "userNameTemplate": {
+          "template": "${source.login}",
+          "type": "BUILT_IN"
+        },
+        "signing": {
+          "kid": "n61GGRFk9X5GMNLDVk14k-C6hPkuSE4mNBUs0h4Nd7s"
+        }
+      },
+      "universalLogout": {
+        "status": "UNSUPPORTED"
+      },
+      "settings": {
+        "app": {
+          "redirectURI": "https://demo-demo-intragen.at.okta.com/oidc/0oat4in8joky9fc8h697/cb",
+          "initiateLoginURI": "https://demo-demo-intragen.at.okta.com/oidc/0oat4in8joky9fc8h697/login"
+        },
+        "notifications": {
+          "vpn": {
+            "network": {
+              "connection": "DISABLED"
+            },
+            "message": null,
+            "helpUrl": null
+          }
+        },
+        "manualProvisioning": false,
+        "implicitAssignment": false,
+        "emOptInStatus": "NONE",
+        "notes": {
+          "admin": null,
+          "enduser": null
+        }
+      },
+      "_links": {
+        "uploadLogo": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4in8joky9fc8h697/logo",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        },
+        "appLinks": [
+          {
+            "name": "login",
+            "href": "https://demo-demo-intragen.okta.com/home/okta_atspoke_sso/0oat4in8joky9fc8h697/aln4kx1q29VJxjmsf0g6",
+            "type": "text/html"
+          }
+        ],
+        "profileEnrollment": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay8egLhx1k697"
+        },
+        "policies": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4in8joky9fc8h697/policies",
+          "hints": {
+            "allow": [
+              "PUT"
+            ]
+          }
+        },
+        "groups": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4in8joky9fc8h697/groups"
+        },
+        "logo": [
+          {
+            "name": "medium",
+            "href": "https://ok14static.oktacdn.com/assets/img/logos/access-requests.38f27b44fd1ce6437889d478b381f5b7.png",
+            "type": "image/png"
+          }
+        ],
+        "clientCredentials": [
+          {
+            "name": "secrets",
+            "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4in8joky9fc8h697/credentials/secrets"
+          }
+        ],
+        "accessPolicy": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay6Cxp4w3c697"
+        },
+        "users": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4in8joky9fc8h697/users"
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4in8joky9fc8h697/lifecycle/deactivate"
+        }
+      }
+    },
+    {
+      "id": "0oat4kc3vw3Ih3iPz697",
+      "orn": "orn:okta:idp:00ot4i6apfm6iOsBb697:apps:oidc_client:0oat4kc3vw3Ih3iPz697",
+      "name": "oidc_client",
+      "label": "DCC Policy Drift Alert",
+      "status": "ACTIVE",
+      "lastUpdated": "2025-07-11T09:28:41.000Z",
+      "created": "2025-07-11T09:08:44.000Z",
+      "accessibility": {
+        "selfService": false,
+        "errorRedirectUrl": null,
+        "loginRedirectUrl": null
+      },
+      "visibility": {
+        "autoLaunch": false,
+        "autoSubmitToolbar": false,
+        "hide": {
+          "iOS": true,
+          "web": true
+        },
+        "appLinks": {
+          "oidc_client_link": true
+        }
+      },
+      "features": [],
+      "signOnMode": "OPENID_CONNECT",
+      "credentials": {
+        "userNameTemplate": {
+          "template": "${source.login}",
+          "type": "BUILT_IN"
+        },
+        "signing": {
+          "kid": "n61GGRFk9X5GMNLDVk14k-C6hPkuSE4mNBUs0h4Nd7s"
+        },
+        "oauthClient": {
+          "autoKeyRotation": true,
+          "client_id": "0oat4kc3vw3Ih3iPz697",
+          "token_endpoint_auth_method": "private_key_jwt",
+          "pkce_required": false
+        }
+      },
+      "universalLogout": {
+        "status": "DISABLED",
+        "supportType": "FULL",
+        "identityStack": "NOT_SHARED",
+        "protocol": "GLOBAL_TOKEN_REVOCATION"
+      },
+      "settings": {
+        "app": {},
+        "notifications": {
+          "vpn": {
+            "network": {
+              "connection": "DISABLED"
+            },
+            "message": null,
+            "helpUrl": null
+          }
+        },
+        "manualProvisioning": false,
+        "implicitAssignment": false,
+        "emOptInStatus": "NONE",
+        "notes": {
+          "admin": null,
+          "enduser": null
+        },
+        "oauthClient": {
+          "client_uri": null,
+          "logo_uri": null,
+          "redirect_uris": [],
+          "response_types": [
+            "token"
+          ],
+          "grant_types": [
+            "client_credentials"
+          ],
+          "jwks": {
+            "keys": [
+              {
+                "kty": "RSA",
+                "id": "pkst4kj13cElkddar697",
+                "status": "ACTIVE",
+                "alg": "RS256",
+                "kid": "dcc-policy-key-1",
+                "use": "sig",
+                "e": "AQAB",
+                "n": "rRVix7YsaaUOunNI6Dq9vxXX8SuZ6NvJg791cSKihGszI49rOUQP5XNeQEYjFg-Fc9ogyhj0xrLte3QQc6FYxiy4A9aECbT-FL8F0oW9gqFCLtBKyKWUUruaQKrCTJ9ZIikMXvr8gtfySA0ix65eZWktiA187cW-Diw_8pXNLWJa7Z-xKB4fPA_1a0_bIi4TxrE7-VeqUvqgmgiT_gzG_MiF99pWcakuBGMso-fgYDiGJfq6U1ky2NKKBmvrHaNYI6DpljzmxH0mPHz_eRAMRNP475TQ_s3PhMNXgncdnDoGM8iXWuVT1m9WllB2NiH_jhGbWIR4HlVzkHbHJ64YeQ"
+              }
+            ]
+          },
+          "application_type": "service",
+          "consent_method": "REQUIRED",
+          "issuer_mode": "DYNAMIC",
+          "idp_initiated_login": {
+            "mode": "DISABLED",
+            "default_scope": []
+          },
+          "wildcard_redirect": "DISABLED",
+          "dpop_bound_access_tokens": false
+        }
+      },
+      "_links": {
+        "uploadLogo": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4kc3vw3Ih3iPz697/logo",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        },
+        "appLinks": [
+          {
+            "name": "oidc_client_link",
+            "href": "https://demo-demo-intragen.okta.com/home/oidc_client/0oat4kc3vw3Ih3iPz697/aln177a159h7Zf52X0g8",
+            "type": "text/html"
+          }
+        ],
+        "profileEnrollment": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay8egLhx1k697"
+        },
+        "policies": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4kc3vw3Ih3iPz697/policies",
+          "hints": {
+            "allow": [
+              "PUT"
+            ]
+          }
+        },
+        "groups": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4kc3vw3Ih3iPz697/groups"
+        },
+        "logo": [
+          {
+            "name": "medium",
+            "href": "https://ok14static.oktacdn.com/assets/img/logos/default.6770228fb0dab49a1695ef440a5279bb.png",
+            "type": "image/png"
+          }
+        ],
+        "clientCredentials": [
+          {
+            "name": "jwks",
+            "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4kc3vw3Ih3iPz697/credentials/jwks"
+          }
+        ],
+        "accessPolicy": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay6Cxp4w3c697"
+        },
+        "users": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4kc3vw3Ih3iPz697/users"
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4kc3vw3Ih3iPz697/lifecycle/deactivate"
+        }
+      }
+    },
+    {
+      "id": "0oat4q5xx8wieLejy697",
+      "orn": "orn:okta:idp:00ot4i6apfm6iOsBb697:apps:oidc_client:0oat4q5xx8wieLejy697",
+      "name": "oidc_client",
+      "label": "My Web App1213",
+      "status": "ACTIVE",
+      "lastUpdated": "2025-07-11T13:02:08.000Z",
+      "created": "2025-07-11T13:02:08.000Z",
+      "accessibility": {
+        "selfService": false,
+        "errorRedirectUrl": null,
+        "loginRedirectUrl": null
+      },
+      "visibility": {
+        "autoLaunch": false,
+        "autoSubmitToolbar": false,
+        "hide": {
+          "iOS": true,
+          "web": true
+        },
+        "appLinks": {
+          "oidc_client_link": true
+        }
+      },
+      "features": [],
+      "signOnMode": "OPENID_CONNECT",
+      "credentials": {
+        "userNameTemplate": {
+          "template": "${source.login}",
+          "type": "BUILT_IN"
+        },
+        "signing": {
+          "kid": "n61GGRFk9X5GMNLDVk14k-C6hPkuSE4mNBUs0h4Nd7s"
+        },
+        "oauthClient": {
+          "autoKeyRotation": true,
+          "client_id": "0oat4q5xx8wieLejy697",
+          "token_endpoint_auth_method": "client_secret_basic",
+          "pkce_required": false
+        }
+      },
+      "universalLogout": {
+        "status": "DISABLED",
+        "supportType": "FULL",
+        "identityStack": "NOT_SHARED",
+        "protocol": "GLOBAL_TOKEN_REVOCATION"
+      },
+      "settings": {
+        "app": {},
+        "notifications": {
+          "vpn": {
+            "network": {
+              "connection": "DISABLED"
+            },
+            "message": null,
+            "helpUrl": null
+          }
+        },
+        "manualProvisioning": false,
+        "implicitAssignment": false,
+        "emOptInStatus": "NONE",
+        "notes": {
+          "admin": null,
+          "enduser": null
+        },
+        "oauthClient": {
+          "client_uri": null,
+          "logo_uri": null,
+          "redirect_uris": [
+            "http://localhost:8080/authorization-code/callback"
+          ],
+          "post_logout_redirect_uris": [
+            "http://localhost:8080"
+          ],
+          "response_types": [
+            "code"
+          ],
+          "grant_types": [
+            "authorization_code"
+          ],
+          "application_type": "web",
+          "consent_method": "REQUIRED",
+          "issuer_mode": "DYNAMIC",
+          "idp_initiated_login": {
+            "mode": "DISABLED",
+            "default_scope": []
+          },
+          "wildcard_redirect": "DISABLED",
+          "dpop_bound_access_tokens": false
+        }
+      },
+      "_links": {
+        "uploadLogo": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4q5xx8wieLejy697/logo",
+          "hints": {
+            "allow": [
+              "POST"
+            ]
+          }
+        },
+        "appLinks": [
+          {
+            "name": "oidc_client_link",
+            "href": "https://demo-demo-intragen.okta.com/home/oidc_client/0oat4q5xx8wieLejy697/aln177a159h7Zf52X0g8",
+            "type": "text/html"
+          }
+        ],
+        "profileEnrollment": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay8egLhx1k697"
+        },
+        "policies": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4q5xx8wieLejy697/policies",
+          "hints": {
+            "allow": [
+              "PUT"
+            ]
+          }
+        },
+        "groups": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4q5xx8wieLejy697/groups"
+        },
+        "logo": [
+          {
+            "name": "medium",
+            "href": "https://ok14static.oktacdn.com/assets/img/logos/default.6770228fb0dab49a1695ef440a5279bb.png",
+            "type": "image/png"
+          }
+        ],
+        "clientCredentials": [
+          {
+            "name": "secrets",
+            "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4q5xx8wieLejy697/credentials/secrets"
+          }
+        ],
+        "accessPolicy": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/policies/rstt4i6ay6Cxp4w3c697"
+        },
+        "users": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4q5xx8wieLejy697/users"
+        },
+        "deactivate": {
+          "href": "https://demo-demo-intragen.okta.com/api/v1/apps/0oat4q5xx8wieLejy697/lifecycle/deactivate"
+        }
+      }
+    }
+  ],
+  "idps": []
+}

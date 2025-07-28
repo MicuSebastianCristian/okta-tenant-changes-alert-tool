@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<style>
+.error-page {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.error-icon {
+  color: var(--secondary);
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.error-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--gray-900);
+}
+
+.error-message {
+  color: var(--secondary);
+  margin-bottom: 2rem;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="error-page">
+  <i data-feather="compass" class="error-icon"></i>
+  <h1 class="error-title">Page Not Found</h1>
+  <p class="error-message">The page you're looking for doesn't exist or has been moved.</p>
+  <a href="{{ url_for('main.index') }}" class="btn btn-primary">
+    <i data-feather="home"></i>
+    Return Home
+  </a>
+</div>
+{% endblock %} 

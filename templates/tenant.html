@@ -1,0 +1,207 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='tenant.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="tenant-header">
+  <div>
+    <h2>
+      <i data-feather="server"></i>
+      {{ tenant.name }}
+    </h2>
+    <div class="tenant-env" data-env="{{ tenant.env }}">
+      <i data-feather="box"></i>
+      {{ tenant.env }}
+    </div>
+    <div class="tenant-meta">
+      <i data-feather="link"></i>
+      {{ tenant.org_url }}
+    </div>
+  </div>
+  <div class="tenant-actions">
+    <a href="{{ url_for('main.edit_tenant', tenant_id=tenant.id) }}" class="btn btn-outline-secondary btn-sm">
+      <i data-feather="edit-2"></i>
+      Edit
+    </a>
+    <form method="post" action="{{ url_for('main.delete_tenant', tenant_id=tenant.id) }}" style="display:inline-block" onsubmit="return confirm('Delete this tenant?');">
+      <button class="btn btn-outline-danger btn-sm">
+        <i data-feather="trash-2"></i>
+        Delete
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Alerting Rules (Config) section - collapsed by default -->
+<div class="mfa-section mb-4">
+  <div class="mfa-header" onclick="toggleTenantRules()" style="cursor:pointer;">
+    <h3>
+      <i data-feather="alert-triangle"></i>
+      Alerting Rules
+      <i data-feather="chevron-down" class="toggle-icon" id="tenantRulesToggleIcon"></i>
+    </h3>
+  </div>
+  <div id="tenantRulesContent" class="mfa-content collapsed">
+    <p class="text-muted mb-3">Configure severities for configuration-drift rules for this tenant:</p>
+    <div class="rules-list">
+      <form method="post" action="{{ url_for('main.edit_tenant', tenant_id=tenant.id) }}">
+        <input type="hidden" name="action" value="update_severities">
+        {% for rid, rule in RULES.items() %}
+        {% set cur = (tenant.rule_severities or {}).get(rid, rule.default_severity) %}
+        <div class="rule-item d-flex align-items-center justify-content-between py-2 border-bottom">
+          <div class="flex-grow-1">
+            <h5 class="mb-0 d-flex align-items-center gap-2">
+              <span class="badge bg-{{ cur }} text-uppercase">{{ cur }}</span>
+              {{ rule.title }}
+            </h5>
+            <p class="text-muted small mb-0">{{ rule.description }}</p>
+          </div>
+          <select name="severity_{{ rid }}" class="form-select form-select-sm" style="max-width:120px;">
+            {% for opt in ["low","medium","high"] %}
+            <option value="{{ opt }}" {% if opt == cur %}selected{% endif %}>{{ opt.capitalize() }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        {% endfor %}
+        <div class="mt-3 text-end">
+          <button class="btn btn-primary btn-sm">
+            <i data-feather="save"></i> Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="scheduler-section card mt-4">
+  <div class="card-body">
+    <div class="scheduler-header">
+      <h3 class="mb-3">
+        <i data-feather="clock"></i>
+        Scheduler
+      </h3>
+    </div>
+
+    {% if scheduler_running %}
+      <div class="scheduler-status running mb-3">
+        <i data-feather="check-circle"></i>
+        Scheduler is running
+      </div>
+      <form method="post" action="{{ url_for('main.stop_scheduler', tenant_id=tenant.id) }}">
+        <button class="btn btn-danger">
+          <i data-feather="square"></i>
+          Stop Scheduler
+        </button>
+      </form>
+    {% else %}
+      <div class="scheduler-status stopped mb-3">
+        <i data-feather="circle"></i>
+        Scheduler is not running
+      </div>
+      <form method="post" action="{{ url_for('main.start_scheduler', tenant_id=tenant.id) }}" class="scheduler-form">
+        <div class="form-group mb-3">
+          <label class="form-label">Interval (minutes)</label>
+          <input type="number" name="interval" class="form-control" value="30" min="1" step="1" style="width:120px;">
+        </div>
+        <button class="btn btn-primary">
+          <i data-feather="play"></i>
+          Start Scheduler
+        </button>
+      </form>
+    {% endif %}
+  </div>
+</div>
+
+<div class="snapshots-section mt-4">
+  <div class="snapshots-header">
+    <h3>
+      <i data-feather="camera"></i>
+      Snapshots
+    </h3>
+    <form method="post" action="{{ url_for('main.take_tenant_snapshot', tenant_id=tenant.id) }}">
+      <button class="btn btn-primary">
+        <i data-feather="camera"></i>
+        Take Snapshot
+      </button>
+    </form>
+  </div>
+
+  <div class="snapshots-list">
+    {% for s in snapshots %}
+    <div class="snapshot-list-item{% if 'baseline' in s %} snapshot-baseline{% endif %}">
+      <div class="snapshot-list-main">
+        <div class="snapshot-list-title">
+          {% if 'baseline' in s %}
+          <i data-feather="star" class="baseline-icon"></i>
+          <span class="baseline-label">Baseline</span>
+          {% else %}
+          <i data-feather="camera"></i>
+          <span>{{ s.split('_')[0] }}</span>
+          {% endif %}
+        </div>
+        <div class="snapshot-list-meta">
+          <span class="snapshot-list-name">{{ s }}</span>
+          {% if s.startswith('2025-') %}
+          <span class="snapshot-list-date">{{ s[0:16].replace('_', ' ') }}</span>
+          {% endif %}
+        </div>
+      </div>
+      <div class="snapshot-list-actions">
+        <a class="btn btn-outline-primary btn-sm" href="{{ url_for('main.snapshot_detail', tenant_id=tenant.id, snap_name=s) }}" title="View Drift">
+          <i data-feather="eye"></i>
+        </a>
+        {% if 'baseline' not in s %}
+        <form method="post" action="{{ url_for('main.promote_snapshot', tenant_id=tenant.id, snap_name=s) }}" class="d-inline-block" onsubmit="return confirm('Promote {{ s }} as baseline?');">
+          <button class="btn btn-outline-success btn-sm" title="Promote as Baseline">
+            <i data-feather="star"></i>
+          </button>
+        </form>
+        <form method="post" action="{{ url_for('main.delete_snapshot', tenant_id=tenant.id, snap_name=s) }}" class="d-inline-block" onsubmit="return confirm('Delete snapshot {{ s }}?');">
+          <button class="btn btn-outline-danger btn-sm" title="Delete Snapshot">
+            <i data-feather="trash-2"></i>
+          </button>
+        </form>
+        {% endif %}
+      </div>
+    </div>
+    {% else %}
+    <div class="no-snapshots">
+      <i data-feather="camera-off"></i>
+      <p>No snapshots yet.<br><a href="#" class="btn btn-primary mt-2">Take your first snapshot</a></p>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% if total_pages > 1 %}
+  <nav class="mt-4" aria-label="Snapshots pagination">
+    <ul class="pagination justify-content-center">
+      <li class="page-item {% if page == 1 %}disabled{% endif %}">
+        <a class="page-link" href="{{ url_for('main.tenant_detail', tenant_id=tenant.id, page=page-1) }}">Previous</a>
+      </li>
+      {% for p in range(1, total_pages + 1) %}
+      <li class="page-item {% if p == page %}active{% endif %}">
+        <a class="page-link" href="{{ url_for('main.tenant_detail', tenant_id=tenant.id, page=p) }}">{{ p }}</a>
+      </li>
+      {% endfor %}
+      <li class="page-item {% if page == total_pages %}disabled{% endif %}">
+        <a class="page-link" href="{{ url_for('main.tenant_detail', tenant_id=tenant.id, page=page+1) }}">Next</a>
+      </li>
+    </ul>
+  </nav>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+  function toggleTenantRules() {
+    const content = document.getElementById('tenantRulesContent');
+    const icon = document.getElementById('tenantRulesToggleIcon');
+    content.classList.toggle('collapsed');
+    icon.style.transform = content.classList.contains('collapsed') ? 'rotate(0deg)' : 'rotate(180deg)';
+  }
+</script>
+{% endblock %} 

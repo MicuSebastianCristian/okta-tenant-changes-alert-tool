@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='snapshot.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="snapshot-header">
+  <h2>
+    <i data-feather="camera"></i>
+    Snapshot Details
+  </h2>
+
+  <div class="snapshot-meta">
+    <div class="snapshot-meta-item">
+      <i data-feather="hash"></i>
+      {{ snap_name }}
+    </div>
+    <div class="snapshot-meta-item">
+      <i data-feather="server"></i>
+      {{ tenant.name }}
+    </div>
+  </div>
+
+  <a href="{{ url_for('main.tenant_detail', tenant_id=tenant.id) }}" class="btn btn-outline-secondary btn-sm">
+    <i data-feather="arrow-left"></i>
+    Back to tenant
+  </a>
+</div>
+
+<!-- Add JSON toggle here -->
+<div class="snapshot-json-toggle mb-4">
+  <details>
+    <summary class="json-toggle-summary">
+      <i data-feather="file-text"></i>
+      Show Full Snapshot JSON
+    </summary>
+    <div class="json-toggle-content mt-3">
+      <button type="button" class="copy-btn mb-2" title="Copy JSON">
+        <i data-feather="copy"></i> Copy JSON
+      </button>
+      <pre class="snapshot-json-block">{{ snapshot_json | pretty_json }}</pre>
+    </div>
+  </details>
+</div>
+
+{% if baseline_name %}
+<div class="baseline-info has-baseline">
+  <i data-feather="check-circle"></i>
+  Comparing with baseline: <strong>{{ baseline_name }}</strong>
+</div>
+{% else %}
+<div class="baseline-info no-baseline">
+  <i data-feather="alert-circle"></i>
+  No baseline set – cannot compute drift
+</div>
+{% endif %}
+
+{% if diff and diff|length > 0 %}
+<div class="drift-table">
+  <table class="table table-bordered mb-0">
+    <thead>
+      <tr>
+        <th>Action</th>
+        <th>Object</th>
+        <th>ID</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for d in diff %}
+      {% set cls = { 'added':'success','deleted':'danger','modified':'warning' }[d.action] %}
+      <tr>
+        <td>
+          <span class="badge bg-{{ cls }} text-uppercase">
+            {% if d.action == 'added' %}
+              <i data-feather="plus-circle"></i>
+            {% elif d.action == 'deleted' %}
+              <i data-feather="trash-2"></i>
+            {% else %}
+              <i data-feather="edit-2"></i>
+            {% endif %}
+            {{ d.action }}
+          </span>
+        </td>
+        <td>{{ d.object }}</td>
+        <td>{{ d.id }}</td>
+        <td>
+          {% if d.action == 'modified' and d.changes %}
+            <details>
+              <summary>Show changes</summary>
+              <div class="drift-details">
+                <button type="button" class="copy-btn" title="Copy JSON">
+                  <i data-feather="copy"></i>
+                </button>
+                <pre>{{ d.changes | pretty_json }}</pre>
+              </div>
+            </details>
+          {% else %}—{% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<div class="alert alert-success">
+  <i data-feather="check-circle"></i>
+  No drift detected
+</div>
+{% endif %}
+
+<div class="promote-form">
+  <form method="post" action="{{ url_for('main.promote_snapshot', tenant_id=tenant.id, snap_name=snap_name) }}" onsubmit="return confirm('Promote {{ snap_name }} as new baseline?');">
+    <button class="btn btn-success">
+      <i data-feather="star"></i>
+      Promote as Baseline
+    </button>
+  </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest('.copy-btn');
+    if (!btn) return;
+    const pre = btn.parentElement.querySelector('pre');
+    if (!pre) return;
+    navigator.clipboard.writeText(pre.textContent).then(function () {
+      btn.innerHTML = '<i data-feather="check"></i>';
+      feather.replace();
+      setTimeout(function () {
+        btn.innerHTML = '<i data-feather="copy"></i>';
+        feather.replace();
+      }, 2000);
+    });
+  });
+</script>
+{% endblock %} 

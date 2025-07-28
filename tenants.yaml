@@ -1,0 +1,21 @@
+- id: demo-demo-intragen
+  name: Demonstration Tenant
+  env: DEV
+  org_url: https://demo-demo-intragen.okta.com
+  token: 00_st8N-sRDvZ6x9apI9lQPc96qor8ooZEzUqvVcHt
+  slack_url: https://hooks.slack.com/services/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
+  mfa_required_apps:
+  - 0oat4i6aqrXpCMJjO697
+  rule_severities:
+    LOGIN_NO_MFA_MANDATORY_APP: low
+    LOGIN_NO_MFA: high
+    NO_FACTORS: low
+    UNKNOWN_DEVICE_SMS_EMAIL_OTP: low
+    POLICY_DRIFT: medium
+    APPLICATION_DELETION: low
+    POLICY_CREATED: high
+    POLICY_DELETED: high
+    SMS_FACTOR_ADDED: medium
+    SMS_AUTH_RULE_ADDED: medium
+    MFA_LESS_SUCCESS: low
+  slack_high_severity_only: true

@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="add-tenant-section">
+  <div class="add-tenant-header" onclick="toggleAddTenantForm()" style="cursor: pointer;">
+    <h2>
+      <i data-feather="plus-circle"></i>
+      Add Tenant
+      <i data-feather="chevron-down" class="toggle-icon"></i>
+    </h2>
+  </div>
+  <div id="addTenantForm" class="add-tenant-form collapsed">
+    <div class="card">
+      <div class="card-body">
+        <form method="post" class="row g-3">
+          <div class="col-md-4">
+            <label class="form-label">Name</label>
+            <input type="text" name="name" class="form-control" required>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Environment</label>
+            <select name="environment" class="form-select">
+              <option value="DEV">Development</option>
+              <option value="STAGING">Staging</option>
+              <option value="PRODUCTION">Production</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Org URL</label>
+            <input type="url" name="org_url" class="form-control" placeholder="https://dev-123.okta.com" required>
+          </div>
+          <div class="col-12">
+            <label class="form-label">API Token</label>
+            <input type="text" name="token" class="form-control" required>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Slack Webhook URL (optional)</label>
+            <input type="url" name="slack_url" class="form-control" placeholder="https://hooks.slack.com/...">
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="slack_high_severity_only" id="slack_high_severity_only" value="true" checked>
+              <label class="form-check-label" for="slack_high_severity_only">
+                Only send HIGH severity alerts to Slack
+              </label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary">
+              <i data-feather="plus"></i>
+              Add Tenant
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tenants-section mt-5">
+  <h2>
+    <i data-feather="database"></i>
+    Tenants
+  </h2>
+  
+  {% for t in tenants %}
+  <div class="tenant-card card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start mb-3">
+        <div>
+          <h5 class="card-title mb-2">{{ t.name }}</h5>
+          <div class="tenant-env" data-env="{{ t.env }}">
+            <i data-feather="box"></i>
+            {{ t.env }}
+          </div>
+        </div>
+        <div class="tenant-actions">
+          <a href="{{ url_for('main.tenant_detail', tenant_id=t.id) }}" class="btn btn-primary btn-sm">
+            <i data-feather="settings"></i>
+            Manage
+          </a>
+          <a href="{{ url_for('main.tenant_logs', tenant_id=t.id) }}" class="btn btn-outline-secondary btn-sm">
+            <i data-feather="activity"></i>
+            Manage Logs
+          </a>
+        </div>
+      </div>
+      <p class="text-muted mb-0">
+        <i data-feather="link"></i>
+        {{ t.org_url }}
+      </p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% block scripts %}
+<script>
+function toggleAddTenantForm() {
+  const form = document.getElementById('addTenantForm');
+  const icon = document.querySelector('.toggle-icon');
+  form.classList.toggle('collapsed');
+  icon.style.transform = form.classList.contains('collapsed') ? 'rotate(0deg)' : 'rotate(180deg)';
+}
+
+// Start with form collapsed
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('addTenantForm');
+  const icon = document.querySelector('.toggle-icon');
+  form.classList.add('collapsed');
+  icon.style.transform = 'rotate(0deg)';
+});
+</script>
+{% endblock %}
+{% endblock %} 

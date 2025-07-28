@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='compare.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='snapshot.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="compare-container">
+  <div class="compare-header">
+    <h2>
+      <i data-feather="git-compare"></i>
+      Compare Snapshots
+    </h2>
+  </div>
+
+  <form method="post">
+    <div class="snapshot-selectors">
+      <div class="snapshot-select-group">
+        <label for="snapshotA">Snapshot A</label>
+        <select class="form-select" id="snapshotA" name="snapshot_a">
+          <option value="">Select Snapshot</option>
+          {% for tenant in tenants %}
+            {% if snapshots_map[tenant.id] %}
+            <optgroup label="{{ tenant.name }} ({{ tenant.env }})">
+              {% for snap in snapshots_map[tenant.id] %}
+                <option value="{{ snap.path }}" {% if snap.path == snapshot_a_path %}selected{% endif %}>{{ snap.name }}</option>
+              {% endfor %}
+            </optgroup>
+            {% endif %}
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="snapshot-select-group">
+        <label for="snapshotB">Snapshot B</label>
+        <select class="form-select" id="snapshotB" name="snapshot_b">
+          <option value="">Select Snapshot</option>
+          {% for tenant in tenants %}
+            {% if snapshots_map[tenant.id] %}
+            <optgroup label="{{ tenant.name }} ({{ tenant.env }})">
+              {% for snap in snapshots_map[tenant.id] %}
+                <option value="{{ snap.path }}" {% if snap.path == snapshot_b_path %}selected{% endif %}>{{ snap.name }}</option>
+              {% endfor %}
+            </optgroup>
+            {% endif %}
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="snapshot-select-group" style="align-self: flex-end;">
+        <button type="submit" class="btn btn-primary">
+          <i data-feather="git-commit"></i>
+          Compare
+        </button>
+      </div>
+    </div>
+  </form>
+
+  {% if differences is not none %}
+  <div class="drift-table mt-4">
+    <table class="table table-bordered mb-0">
+      <thead>
+        <tr>
+          <th>Action</th>
+          <th>Object</th>
+          <th>ID</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for diff in differences %}
+        {% set cls = { 'added':'success', 'deleted':'danger', 'modified':'warning' }[diff.action] %}
+        <tr>
+          <td>
+            <span class="badge bg-{{ cls }} text-uppercase">
+              {% if diff.action == 'added' %}
+                <i data-feather="plus-circle"></i>
+              {% elif diff.action == 'deleted' %}
+                <i data-feather="trash-2"></i>
+              {% else %}
+                <i data-feather="edit-2"></i>
+              {% endif %}
+              {{ diff.action }}
+            </span>
+          </td>
+          <td>{{ diff.object }}</td>
+          <td>{{ diff.id }}</td>
+          <td>
+            {% if diff.action == 'modified' and diff.changes %}
+              <details>
+                <summary>Show changes</summary>
+                <div class="drift-details">
+                  <button type="button" class="copy-btn" title="Copy JSON">
+                    <i data-feather="copy"></i>
+                  </button>
+                  <pre>{{ diff.changes | pretty_json }}</pre>
+                </div>
+              </details>
+            {% else %}—{% endif %}
+          </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="4" class="text-center text-muted py-4">No differences found.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+</div>
+
+{% block scripts %}
+<script>
+// Re-initialize feather icons
+ document.addEventListener('DOMContentLoaded', function() {
+     feather.replace();
+ });
+
+// Copy JSON handler
+document.addEventListener('click', function (e) {
+  const btn = e.target.closest('.copy-btn');
+  if (!btn) return;
+  const pre = btn.parentElement.querySelector('pre');
+  if (!pre) return;
+  navigator.clipboard.writeText(pre.textContent).then(function () {
+    btn.innerHTML = '<i data-feather("check")></i>';
+    feather.replace();
+    setTimeout(function () {
+      btn.innerHTML = '<i data-feather("copy")></i>';
+      feather.replace();
+    }, 2000);
+  });
+});
+</script>
+{% endblock %}
+{% endblock %} 
